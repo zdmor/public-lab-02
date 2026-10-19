@@ -1,3 +1,12 @@
+# CURRENT PHASE: SCAN / BASELINE / DIFF — NO NEW PURGE
+
+**2026-10-19 user decision supersedes the earlier cleanup-first plan.** First complete a reliable read-only inventory of C: and D:, reconcile volume-used against file enumeration, identify the earliest provable computer/file state, build clean-OS and lean-workstation estimates, distinguish verified-new files from inferred-recent files, and rank cleanup candidates with deletion impacts. **Do not initiate T1/T2/T3 or other new deletion batches, empty recycle bins, or run automatic state-snapshot purges until the user approves a reviewed batch. Preserve existing scan evidence and journals.**
+
+Latest controlling decision (Chinese): [PHASE_SCAN_BASELINE_DECISION.md](./PHASE_SCAN_BASELINE_DECISION.md).
+
+Earlier target of C used-space reduction 33.3% and D used-space reduction 25% is a future planning challenge only, not immediate execution authorization.
+
+---
 # File Organizer | N1–ChatGPT Cleanup Review | 2026-10-19
 
 Goal: make the Windows PC materially leaner. This is a subfolder of the EXISTING PUBLIC repo; do not create any new repository.
