@@ -1,0 +1,21 @@
+id,volume,category,bucket_gib,release_min_gib,release_max_gib,recommendation,order,method,recovery_evidence,risk_lost_function,blocker,note
+D01,D,Cloud sync mirror,19.307,0.0,19.31,HOLD,8,"Verify remote + external copy, then selective sync/free-up-space",remote + external copy,deletion may propagate to cloud; unique data loss,3-way verification; user cloud login,"client running; 16,712 files; do not delete the folder"
+D02,D,Program Files application set,16.19,0.0,10.0,UNINSTALL,5,Vendor uninstallers for selected apps only,reinstall,lost app capabilities/licenses,user choice per app,keep agent IDE + IM + Git
+D03,D,Program Files (x86) application set,15.51,0.0,11.5,UNINSTALL,5,Vendor uninstallers for selected apps only,reinstall,lost app capabilities/licenses,user choice per app,keep current agent workspace
+D04,D,Agent workspace data (DB/logs/sessions),11.13,0.0,6.0,ARCHIVE/CLEAN,6,Prune logs/backups; archive sessions externally,archive,loses local session history,user choice,DB itself is live; do not delete
+D05,D,Recycle bin payload,9.106,9.1,9.11,HOLD,4,"Isolate documents, then purge after acceptance",quarantine copy,irreversible unique-data loss,explicit user authorization,9.099 GiB has no surviving original
+D06,D,Enterprise IM data,7.908,0.0,5.0,ARCHIVE,6,Archive media externally; keep config,archive,loses local chat media,user choice,last use 2026-10-15
+D07,D,Migration copy with live junctions,6.877,0.0,6.88,HOLD,7,"Redirect live junctions, verify apps, then retire copy",rollback copy,breaks npm/IM/agent data paths if deleted first,dependency verification,4 live + 7 broken reparse points
+D08,D,Old application trash,4.34,4.34,4.34,CLEAN,3,Verify then delete,none,old app data lost,user acceptance,already a trash folder
+D09,D,Downloaded cloud-drive archive,4.119,0.0,4.12,ARCHIVE/CLEAN,3,Verify then delete/archive,none,downloaded media/installers lost,user choice,115 files
+D10,D,Project repositories/data,3.616,0.0,3.62,KEEP/ARCHIVE,8,Keep active; archive inactive to external,git/external,loses local project state,user choice,not a cleanup target by default
+D11,D,This project's own inventory state,3.09,2.5,3.0,CLEAN,1,"Keep latest summaries, prune duplicate snapshots",none,loses historical scan detail,none,created by this project; safe to prune
+D12,D,Downloads (installers),2.61,2.5,2.61,CLEAN,1,Verify then delete installers,vendor re-download,installer re-download needed,user choice,18 files; 2.5 GiB is update installers
+D13,D,Office cloud files,2.5,0.0,2.5,HOLD,8,Verify cloud copy then free local space,cloud copy,offline access lost; cloud deletion risk,cloud semantics verification,same class as D01
+D14,D,Book/document library,2.167,0.0,2.17,ARCHIVE,8,Archive to external,external copy,library unavailable locally,external media,user data
+D15,D,AI lab projects/data,1.119,0.0,1.12,KEEP/ARCHIVE,8,Keep active; archive inactive,external,project state lost,user choice,user data
+D16,D,CAD application,1.053,0.0,1.05,HOLD,5,Uninstall if unused,reinstall + license,CAD work blocked,user choice,last use 2026-10-13
+D17,D,Migration copy (second base),0.731,0.0,0.73,HOLD,7,"Redirect live junction, verify, retire",rollback copy,agent data path breaks,dependency verification,1 live reparse point
+D18,D,Agent backups,0.728,0.73,0.73,CLEAN,2,"Verify current version, then delete",current install,lose rollback copy,verification,old backup set
+D19,D,Tools/utility directory,0.722,0.0,0.3,KEEP,8,Keep; prune only obvious installers,reinstall,minor tool loss,none,mostly small utilities
+D20,D,Life-system documents,0.708,0.0,0.71,ARCHIVE,8,Archive to external,external copy,documents unavailable,external media,user data

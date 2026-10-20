@@ -1,0 +1,3 @@
+reading_utc_plus8,volume,total_gib,used_gib,free_gib,delta_vs_16_21_gib,kpi_target_used_gib,gap_to_target_gib,source
+2026-10-20T18:36:13+08:00,C,198.969,166.839,32.13,1.152,106.46,60.379,GetDiskFreeSpaceExW; previous reading 2026-10-20T16:21:23+08:00
+2026-10-20T18:36:13+08:00,D,257.054,119.701,137.353,1.897,87.63,32.071,GetDiskFreeSpaceExW; previous reading 2026-10-20T16:21:23+08:00

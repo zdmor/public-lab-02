@@ -1,0 +1,25 @@
+scenario,step,release_gib,runtime_gib,target_gap_gib
+C lean,pagefile shrink to 4-6 GiB,15.3,36.52,23.86
+C lean,component-store DISM,2.5,36.52,23.86
+C lean,embedded staging archives,1.87,36.52,23.86
+C lean,recycle missing-original payload (documents isolated),4.07,36.52,23.86
+C lean,stale upgrade artifacts,1.96,36.52,23.86
+C lean,setup logs,2.0,36.52,23.86
+C lean,browser cache,1.5,36.52,23.86
+C lean,office cache,2.5,36.52,23.86
+C lean,temp,0.7,36.52,23.86
+C lean,npm cache,0.6,36.52,23.86
+C lean,Windows Update cache,0.58,36.52,23.86
+C lean,Playwright browsers,0.69,36.52,23.86
+C lean,desktop triage,0.75,36.52,23.86
+C lean,CLI agent logs,0.4,36.52,23.86
+C lean,legacy agent app data A,0.5,36.52,23.86
+C lean,UWP caches,0.6,36.52,23.86
+C aggressive,embedded toolchain cores,6.4,60.27,0.11
+C aggressive,finance market data,6.52,60.27,0.11
+C aggressive,AI client data A,3.23,60.27,0.11
+C aggressive,legacy agent backup,2.46,60.27,0.11
+C aggressive,legacy agent app data B,2.03,60.27,0.11
+C aggressive,secondary browser,1.03,60.27,0.11
+C aggressive,secondary cloud client,0.58,60.27,0.11
+C aggressive,deeper office cache,1.5,60.27,0.11

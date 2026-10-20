@@ -1,0 +1,10 @@
+scenario,step,release_gib,runtime_gib,target_gap_gib
+D safe,project inventory state,2.5,14.19,17.88
+D safe,downloads installers,2.5,14.19,17.88
+D safe,old application trash,4.34,14.19,17.88
+D safe,agent backups,0.73,14.19,17.88
+D safe,downloaded cloud-drive archive,4.12,14.19,17.88
+D safe+cloud,cloud sync mirror (blocked),19.31,33.5,-1.43
+D safe+authorized,recycle payload,9.1,37.29,-5.22
+D safe+authorized,selected application uninstalls,10.0,37.29,-5.22
+D safe+authorized,agent workspace logs/backups,4.0,37.29,-5.22

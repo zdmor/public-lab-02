@@ -1,0 +1,18 @@
+volume,cause,observed_recent_write_gib,grade
+C,Browser profile cache (ExtensionActivity/Cache/WebCache),0.552,upper bound: files created/modified after 16:21; deletions invisible
+C,Temporary installer staging (downloader update),0.422,upper bound; largest single temp archive 0.186 GiB
+C,IM message databases under Documents,0.275,"upper bound; live message DB, not a deletion candidate"
+C,Legacy agent backup tree,0.243,upper bound; current-version health not yet verified
+C,UWP/browser package caches,0.067,upper bound
+C,Windows Update DataStore,0.038,upper bound
+C,Office add-on cache/logs,0.028,upper bound
+C,CLI agent log databases,0.024,upper bound
+C,Setup monitor log,0.007,upper bound
+C,Updater history/logs,0.001,upper bound
+D,Downloader auto-update (update archive + repair + kernel DLL),1.312,"upper bound; update archive 0.523 GiB, repair exe 0.198 GiB"
+D,Inventory snapshots written by this project,0.421,upper bound; our own .state durable files
+D,Migration cache: speech model + IM xlog,0.226,"upper bound; HF model 0.135 GiB, IM xlog 0.077 GiB"
+D,Agent workspace DB/logs,0.155,upper bound
+D,Downloaded installer,0.013,upper bound
+D,ESP32 backup binary,0.001,upper bound
+D,WPS cloud cache metadata,4e-06,upper bound

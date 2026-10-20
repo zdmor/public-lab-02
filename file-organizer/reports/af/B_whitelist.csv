@@ -1,0 +1,31 @@
+id,capability,class,observed_footprint_gib,running_now,last_use_beijing,uninstall_impact,reinstall_recovery,lean_default
+B01,"OS, drivers, kernel runtimes",KEEP_REQUIRED,system,yes,n/a,OS/apps break,OS repair/reinstall,KEEP
+B02,Cloud sync client A,KEEP_REQUIRED,0.70 C app + 19.31 D data,yes,active sync,sync stops; local cache may be removed,reinstall + account re-login; remote copy is the recovery,KEEP
+B03,Agent IDE A,KEEP_REQUIRED,2.16 D,yes,2026-10-20 18:23,loses IDE state only,reinstall + login,KEEP
+B04,"Agent workspace A, current version",KEEP_REQUIRED,1.0-1.3 D,yes,2026-10-20 18:20,loses local workspace cache,reinstall + login,KEEP
+B05,CLI agent set A + Node/npm,KEEP_REQUIRED,0.1 C + node 0.09 C,yes,2026-10-20 18:23,CLI unavailable,npm reinstall; auth re-login,KEEP
+B06,Desktop AI client A,KEEP_REQUIRED,0.3-1.0 C,yes,2026-10-20 09:56,client unavailable,store reinstall + login,KEEP
+B07,System browser + WebView runtime,KEEP_REQUIRED,2.54 C unique,yes,2026-10-20 00:11,OS/webview dependencies break,OS component; cannot fully remove,KEEP
+B08,Secondary browser A,NEEDS_USER_CHOICE,1.03 C,no,2026-10-17,loses browser profile/sync,reinstall + sync login,CANDIDATE
+B09,IM client A,KEEP_REQUIRED,0.85 D app + 7.87 C data,yes,2026-10-20 08:45,app only; history remains in Documents,reinstall + login; history backup required,KEEP
+B10,Enterprise IM A,NEEDS_USER_CHOICE,2.05 D app + 7.91 D data,no,2026-10-15 16:46,app only; media data remains,reinstall + login; org re-auth,CANDIDATE
+B11,Office suite A,KEEP_REQUIRED,1.36 C app + 5.31 C data + 2.50 D cloud,yes,2026-10-20 11:16,document editing unavailable,reinstall + login; cloud data separate,KEEP
+B12,Legacy Office shells/remnants,CAN_REMOVE,0.01-0.16 C,no,none,none material,installer only if needed,REMOVE
+B13,Downloader A,NEEDS_USER_CHOICE,1.31 D + temp 0.42 C,no,2026-10-20 17:27,download tasks stop; downloaded files remain,reinstall; update re-download,CANDIDATE
+B14,Cloud-drive client A,CAN_REMOVE,1.79 D app + 4.12 D downloads,no,2026-10-16 installer only,app only; downloaded data remains,reinstall + login,REMOVE
+B15,AI client A,NEEDS_USER_CHOICE,0.96 D,no,2026-10-19 13:55,loses local chat data,reinstall + login; export first,CANDIDATE
+B16,AI client B,NEEDS_USER_CHOICE,0.75 D,no,2026-10-19 14:41,loses local chat data,reinstall + login; export first,CANDIDATE
+B17,AI client set C,CAN_REMOVE,~5.8 D + 3.23 C data,one running,2026-10-15 to 2026-10-10,loses local chat/model data,reinstall + login,REMOVE
+B18,AI editor A,NEEDS_USER_CHOICE,0.75 D,no,2026-10-14 10:47,loses editor state,reinstall + login,CANDIDATE
+B19,Embedded IDE A,NEEDS_USER_CHOICE,3.05 D,no,no evidence,cannot build firmware,reinstall + license activation,CANDIDATE
+B20,Embedded toolchain A,NEEDS_USER_CHOICE,8.27 C,no,core install 2026-10-20 13:38-13:55,cannot compile/upload; staging is re-downloadable,reinstall cores from board manager,CANDIDATE
+B21,CAD suite A,NEEDS_USER_CHOICE,1.05 D,no,2026-10-13 08:31,cannot open/edit CAD files,reinstall + license,CANDIDATE
+B22,CAD shell remnant,CAN_REMOVE,0.004 D,no,none,none,none,REMOVE
+B23,Finance terminals + market data,NEEDS_USER_CHOICE,6.52 C data + 1.0 D app + 0.32 D app,no,2026-09-01,loses local market history and trading login,reinstall + broker re-auth; history re-download,CANDIDATE
+B24,Remote-access client A,NEEDS_USER_CHOICE,0.41 D,service,2026-10-19 13:15,remote access stops,reinstall + device re-bind,CANDIDATE
+B25,Markdown/notes clients,CAN_REMOVE,0.72 D,no,2026-10-13 / 2026-09-02,loses local note cache,reinstall; vault is separate,REMOVE
+B26,Dev runtimes (Python/Miniconda/venv/Node/Git),KEEP_REQUIRED,0.4-0.8 C+D,yes,daily,automation/tooling breaks,reinstall; venv rebuild,KEEP
+B27,Browser automation browsers,CAN_REMOVE,1.36 C+D,no,none,browser tests unavailable,reinstall via package manager,REMOVE
+B28,Legacy engineering runtimes,NEEDS_USER_CHOICE,0.2-0.5 C,no,no evidence,may break dependent engineering apps,reinstall + license,CANDIDATE
+B29,Small utilities,NEEDS_USER_CHOICE,0.15 C,no,occasional,minor convenience loss,reinstall,KEEP 7-Zip only
+B30,Vendor/legacy helpers,CAN_REMOVE,~0.5 C,no,none,none material,reinstall only if a device needs it,REMOVE

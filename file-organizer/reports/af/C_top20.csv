@@ -1,0 +1,21 @@
+id,volume,category,bucket_gib,release_min_gib,release_max_gib,recommendation,order,method,recovery_evidence,risk_lost_function,blocker,note
+C01,C,System pagefile (system-managed),19.313,13.3,17.3,CLEAN,2,Resize pagefile to 6 GiB (min) or 2 GiB (max); reboot,none; reversible,commit limit and crash-dump capability shrink,UAC + reboot,"pagefile is currently 19.313 GiB; usage 1.589 GiB, peak 2.654 GiB"
+C02,C,Windows component store (WinSxS),16.6,0.0,5.0,CLEAN,2,DISM /StartComponentCleanup /ResetBase,update rollback points lost,cannot uninstall superseded updates,UAC; analyze first,reclaimable amount is UNKNOWN until elevated analyze
+C03,C,Embedded toolchain + staging,8.269,1.87,8.27,CLEAN/UNINSTALL,3,Delete staging archives; remove cores only if unused,cores re-downloadable,cannot compile/upload for those boards,user choice for cores,staging 24 files / 1.866 GiB proven re-downloadable
+C04,C,Personal documents + IM history,7.873,0.0,7.87,ARCHIVE,5,"Copy to external media with hash verification, then remove local",external copy,irreversible if archive lost; IM history breaks,external media + user acceptance,not a cache; C->D move does not help the D KPI
+C05,C,Finance market-data directory,6.52,0.0,6.52,UNINSTALL/ARCHIVE,5,Uninstall terminal or archive data externally,vendor re-download,local history and settings lost,user choice; re-login,last use 2026-09-01
+C06,C,Recycle bin payload,5.378,4.07,6.6,HOLD,4,Isolate documents first; purge remainder only after acceptance,quarantine copy,irreversible unique-data loss,explicit user authorization,scanner 5.378 vs payload 6.602; 817 documents / 0.45 GiB
+C07,C,Windows System32,5.17,0.0,0.0,KEEP,-,none,-,OS breakage,none,not a cleanup target
+C08,C,Browser/WebCache profile,4.629,0.5,2.0,CLEAN,1,Close browser; clear HTTP cache and WebCache only,cache regenerates,temporary browsing slowdown,browser stop,keep bookmarks/passwords/profile DB
+C09,C,AI desktop client data A,3.227,0.0,3.23,HOLD,5,Uninstall client data only if app retired,reinstall + login,local chats/models lost,user choice,"app data, not cache"
+C10,C,Office local cache (Kingsoft-class),2.876,0.5,2.5,CLEAN,1,"Clear cache/logs, keep config and cloud files",cloud copy,offline recent-file cache lost,app stop,separate config from cache
+C11,C,Browser runtime shared files,2.54,0.0,0.0,KEEP,-,none,-,WebView/Edge-dependent apps break,none,unique size after hardlink dedup
+C12,C,Windows setup logs,2.532,0.0,2.53,CLEAN,2,Remove old Panther logs,none,lose setup diagnostics,UAC,not needed for normal operation
+C13,C,Legacy agent backup tree,2.464,0.0,2.46,HOLD,5,Delete after 14 days of current-version health,current install,lose rollback copy,verification window,modified today; do not treat as stale yet
+C14,C,Office roaming cache/logs,2.43,0.3,1.8,CLEAN,1,Clear addon cache and logs,regenerates,minor UI cache loss,app stop,keep user config
+C15,C,Legacy agent app data,2.034,0.0,2.03,HOLD,5,Remove only if that agent is retired,reinstall,loses local sessions,user choice,no recent writes
+C16,C,Stale Windows upgrade artifacts,1.96,0.0,1.96,CLEAN,2,Remove $WinREAgent remnants,none,lose upgrade rollback,UAC,not an active recovery point
+C17,C,UWP package caches,1.806,0.2,1.0,CLEAN,3,Clear per-app caches only,regenerates,app sign-in state may reset,per-app,do not remove package data wholesale
+C18,C,Secondary browser install,1.025,0.0,1.03,HOLD,5,Uninstall if unused,installer,browser profile/sync loss,user choice,Edge remains
+C19,C,Desktop triage quarantine,0.754,0.0,0.75,CLEAN,4,Review then delete,none,irreversible if it contains unique files,review first,created by prior triage
+C20,C,Browser automation browsers,0.689,0.0,0.69,CLEAN,3,Delete browser bundles,npx playwright install,browser tests unavailable until reinstall,none,re-downloadable
