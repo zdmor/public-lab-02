@@ -23,6 +23,8 @@ const A_DIR = path.join(ROOT, 'A_已完成_可调用技能');
 const INDEX_CSV = path.join(A_DIR, 'index.csv');
 const T_REGISTRY = path.join(ROOT, 'F_辅助产出', 'T注册表.md');
 const CROSS_INDEX = path.join(ROOT, 'F_辅助产出', '跨书信号索引.md');
+const T_TOKEN = /T-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*/g;
+const T_ID_CANON = /^T-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+$/;
 
 const sha256 = (data) => crypto.createHash('sha256').update(data).digest('hex');
 const rel = (p) => path.relative(ROOT, p).split(path.sep).join('/');
@@ -108,6 +110,7 @@ const PHASE_NAME = /Phase([0-5])/;
 
 // ---------- T registry ----------
 const tRegistryRaw = read(T_REGISTRY).replace(/^\uFEFF/, '');
+const crossIndexRaw = read(CROSS_INDEX).replace(/^\uFEFF/, '');
 const tRegistryLines = tRegistryRaw.split(/\r?\n/);
 const tRows = [];
 for (let i = 0; i < tRegistryLines.length; i++) {
@@ -116,7 +119,7 @@ for (let i = 0; i < tRegistryLines.length; i++) {
   const cells = line.split('|').slice(1, -1).map(s => s.trim());
   const tId = cells[0] || '';
   const schema = cells.length === 8 ? 'v1_8col' : cells.length === 12 ? 'v2_12col' : 'other_' + cells.length;
-  const validId = /^T-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*$/.test(tId);
+  const validId = T_ID_CANON.test(tId);
   const record = {
     line: i + 1,
     t_id: tId,
@@ -220,8 +223,8 @@ for (const name of dirNames) {
     if (/^\s*depends_on\s*:/m.test(content)) phaseFilesWithDependsOn++;
     if (/^\s*conflicts_with\s*:/m.test(content)) phaseFilesWithConflictsWith++;
 
-    for (const m of content.matchAll(/T-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)*/g)) {
-      if (/^T-[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+$/.test(m[0])) phaseTIds.add(m[0]);
+    for (const m of content.matchAll(T_TOKEN)) {
+      if (T_ID_CANON.test(m[0])) phaseTIds.add(m[0]);
       else nonstandardTokens.add(m[0]);
     }
   }
@@ -385,12 +388,61 @@ for (const [key, members] of byWork.entries()) {
   }
 }
 
+// T records: one record per registry row, with the minimum audit fields
+for (const r of tRows) {
+  r.t_row_id = stableId('trow', `${r.line}:${r.t_id}:${r.signature}`);
+}
+const recordByExact = new Map(records.map(r => [r.title, r]));
+const recordByNorm = new Map(records.map(r => [normTitle(r.title), r]));
+const findBookRecord = (book) => recordByExact.get(book) || recordByNorm.get(normTitle(book)) || null;
+const tRecords = tRows.map(r => {
+  const rowsForId = tById.get(r.t_id) || [];
+  const colliding = rowsForId.length > 1;
+  const exactDuplicate = colliding && new Set(rowsForId.map(x => x.signature)).size === 1;
+  const firstRow = rowsForId[0];
+  const bookRecord = findBookRecord(r.book);
+  return {
+    record_id: r.t_row_id,
+    t_id: r.t_id,
+    t_registry_line: r.line,
+    work_id: bookRecord ? bookRecord.work_id : null,
+    edition_id: bookRecord ? bookRecord.edition_id : null,
+    book_record_id: bookRecord ? bookRecord.record_id : null,
+    book: r.book,
+    schema_shape: r.schema_shape,
+    cells_n: r.cells_n,
+    raw_cells: r.raw_cells,
+    source_locator: 'not_computed',
+    claim_kind: 'not_assigned',
+    extraction_confidence: 'not_assigned',
+    counterexample: 'not_checked',
+    applicability: 'not_checked',
+    falsifier: 'not_checked',
+    reviewed_at: null,
+    audit_status: colliding ? 't_id_collision' : 't_registry_unreviewed',
+    dedup: {
+      duplicate_of: exactDuplicate && firstRow && r.t_row_id !== firstRow.t_row_id ? firstRow.t_row_id : null,
+      alias_paths: [],
+      legacy_t_id: null,
+      canonical_t_id: exactDuplicate ? r.t_id : (colliding ? null : r.t_id),
+      collision_reason: colliding ? (exactDuplicate ? 'exact_duplicate' : 'same_id_different_payload') : null,
+      resolution_state: colliding ? (exactDuplicate ? 'exact_duplicate' : 'ambiguous') : 'unique',
+    },
+  };
+});
+
 // T id phase/registry comparison
 const phaseTIdsAll = unique(records.flatMap(r => r.t_ids.in_phases));
 const nonstandardPhaseTokens = unique(records.flatMap(r => r.t_ids.nonstandard_tokens));
 const tMissingFromRegistry = phaseTIdsAll.filter(id => !tRegistryIds.has(id));
 const tRegistryNotInPhases = [...tRegistryIds].filter(id => !phaseTIdsAll.includes(id));
 const registryBooksUnmatched = unique(tRows.map(r => r.book).filter(Boolean).filter(b => !dirNames.includes(b) && !records.some(r => normTitle(r.title) === normTitle(b))));
+
+// cross-book signal index has its own T namespace; check it against registry + phases
+const crossIndexIds = unique([...crossIndexRaw.matchAll(T_TOKEN)].map(m => m[0]).filter(id => T_ID_CANON.test(id))).sort();
+const crossIndexNotInRegistry = crossIndexIds.filter(id => !tRegistryIds.has(id));
+const crossIndexInPhases = crossIndexIds.filter(id => phaseTIdsAll.includes(id));
+const crossIndexNotInPhases = crossIndexIds.filter(id => !phaseTIdsAll.includes(id));
 
 // ---------- summary ----------
 const books = records.filter(r => r.record_kind === 'book');
@@ -490,6 +542,13 @@ const summary = {
   registry_rows_with_conflicts_with: registryRowsWithConflictsWith,
   phase_files_with_depends_on: phaseFilesWithDependsOn,
   phase_files_with_conflicts_with: phaseFilesWithConflictsWith,
+  cross_index_ids_unique: crossIndexIds.length,
+  cross_index_ids_not_in_registry: crossIndexNotInRegistry.length,
+  cross_index_ids_in_phases: crossIndexInPhases.length,
+  cross_index_ids_not_in_phases: crossIndexNotInPhases.length,
+  t_records_total: tRecords.length,
+  t_records_collision: tRecords.filter(r => r.audit_status === 't_id_collision').length,
+  t_records_unreviewed: tRecords.filter(r => r.audit_status === 't_registry_unreviewed').length,
   t_ids_in_phases_unique: phaseTIdsAll.length,
   nonstandard_t_tokens_in_phases: nonstandardPhaseTokens.length,
   t_ids_in_phases_not_in_registry: tMissingFromRegistry.length,
@@ -561,6 +620,13 @@ const knownIssues = [
     resolution_state: 'open',
   },
   {
+    code: 'CROSS_INDEX_REGISTRY_DISCONNECT',
+    severity: 'high',
+    evidence: `cross_index_ids=${summary.cross_index_ids_unique}; in_registry=${summary.cross_index_ids_unique - summary.cross_index_ids_not_in_registry}; not_in_registry=${summary.cross_index_ids_not_in_registry}; in_phases=${summary.cross_index_ids_in_phases}; not_in_phases=${summary.cross_index_ids_not_in_phases}`,
+    description: '跨书信号索引使用独立 T 命名空间：47 个 T ID 全部不在 T 注册表，其中 39 个也未在 Phase 文件出现。不能把这些 ID 当作已注册或已验证知识。',
+    resolution_state: 'open',
+  },
+  {
     code: 'DEPENDENCY_FIELDS_ABSENT',
     severity: 'high',
     evidence: `registry depends_on=${summary.registry_rows_with_depends_on}; conflicts_with=${summary.registry_rows_with_conflicts_with}; phase depends_on=${summary.phase_files_with_depends_on}; conflicts_with=${summary.phase_files_with_conflicts_with}`,
@@ -576,7 +642,225 @@ const knownIssues = [
   },
 ];
 
+// ---------- readback samples ----------
+const normWs = (s) => s.replace(/[\s\u00a0]+/g, ' ').trim();
+
+function scanSource(bookTitle, sourceRel, patterns, maxHits = 5) {
+  const fileRel = `A_已完成_可调用技能/${bookTitle}/${sourceRel}`;
+  const full = path.join(ROOT, fileRel);
+  if (!existsFile(full)) {
+    return { file: fileRel, exists: false, checks: patterns.map(p => ({ label: p.label, found: false, hits: [] })) };
+  }
+  const lines = read(full).split(/\r?\n/);
+  const checks = patterns.map(p => {
+    const hits = [];
+    for (let i = 0; i < lines.length && hits.length < maxHits; i++) {
+      const normalized = normWs(lines[i]);
+      if (normalized && p.pattern.test(normalized)) {
+        hits.push({ line: i + 1, excerpt: normalized.slice(0, p.excerptLen || 120) });
+      }
+    }
+    return { label: p.label, found: hits.length > 0, hits };
+  });
+  return { file: fileRel, exists: true, lines_total: lines.length, checks };
+}
+
+function findLineHits(text, needle) {
+  return text.split(/\r?\n/)
+    .map((line, i) => ({ line: i + 1, text: line }))
+    .filter(x => x.text.includes(needle))
+    .map(x => ({ line: x.line, excerpt: normWs(x.text).slice(0, 160) }));
+}
+
+const registryRowsFor = (id) => (tById.get(id) || []).map(r => ({
+  line: r.line,
+  book: r.book,
+  schema_shape: r.schema_shape,
+  cells_n: r.cells_n,
+  field_3: r.field_3,
+  field_4: r.field_4,
+  field_5: r.field_5,
+  signature: r.signature,
+}));
+
+const READBACK_CONFIG = [
+  {
+    t_id: 'T-SHM-010',
+    sample_kind: 'random',
+    selection_method: 'sorted 286 phase T IDs; sha256("2026-10-20") prefix f39a418b mod 286 = 207',
+    book: 'Trading In the Shadow of the Smart Money (Gavin Holmes)',
+    source_rel: '全书文本/全书文字.md',
+    patterns: [
+      { label: 'up_bar_definition', pattern: /closed higher than the previous bar/i },
+      { label: 'down_bar_definition', pattern: /closed lower than the bar\(s\) behind it/i },
+      { label: 'weakness_on_up_bar', pattern: /weakness appears on an up bar/i },
+      { label: 'strength_on_down_bar', pattern: /strength appears on a down bar/i },
+    ],
+    assessment: 'Phase1 对 Up bar / Down bar 的定义与原文一致；原文规则 1/2 给出同一定义。但 T-SHM-010 不在 T 注册表（0 行），双向一致性失败。原文词间夹制表符/双空格，朴素 grep 会漏检；source_locator 必须做空白归一化。',
+    status: 'source_supported_but_unregistered',
+  },
+  {
+    t_id: 'T-LIV-003',
+    sample_kind: 'key',
+    selection_method: 'key sample: trend/sector filter, prioritized after T-LIV-002 stop-loss',
+    book: 'How to Trade In Stocks (Jesse Livermore)',
+    source_rel: '全书文本/全书文字.md',
+    patterns: [
+      { label: 'industry_group_concept', pattern: /industry group/i },
+      { label: 'sister_stock_concept', pattern: /sister stock/i },
+      { label: 'top20_parameter', pattern: /top\s*20|20\s*%/i },
+      { label: 'chapter5_body_heading', pattern: /^chapter\s*-?\s*5(\s*-?\s*l)?$/i },
+      { label: 'chapter8_body_heading', pattern: /^chapter\s*8$/i },
+    ],
+    assessment: '概念有原文支撑，实际位于 Chapter 8（Industry Group / Tandem Trading），但 Phase2 标注 Ch5，定位错误。`sector_momentum_top20%` 在原文只对应 20%-20%-20%-40% 建仓比例（lines 928/1706），不是板块动量阈值。注册表两行（98/105）载荷不同，判 ambiguous collision。',
+    status: 'concept_supported_locator_and_parameter_unsupported',
+  },
+  {
+    t_id: 'T-VPA-001',
+    sample_kind: 'controversial',
+    selection_method: 'controversial sample: low-volume/false-breakout family has the most conflicting rows',
+    book: 'A Complete Guide To Volume Price Analysis (Coulling, Anna)',
+    source_rel: '全书文本/全书文字.md',
+    patterns: [
+      { label: 'breakout_with_volume', pattern: /breakout from one of these regions of consolidation, coupled with volume/i },
+      { label: 'rising_prices_rising_volume', pattern: /rising prices = rising volume/i },
+      { label: 'threshold_1_5', pattern: /1\.5|150\s*%/i },
+      { label: 'chapter4_heading', pattern: /^chapter four$/i },
+      { label: 'chapter7_heading', pattern: /^chapter seven$/i },
+      { label: 'chapter8_heading', pattern: /^chapter eight$/i },
+    ],
+    assessment: '概念有原文支撑（放量突破/价量齐升），Chapter 4 与 Chapter 7/8 覆盖范围基本相符；但 `vol>=1.5x_avg` 是派生阈值，原文没有。Phase2 仅 29 行骨架，无 source_locator/claim_kind。注册表两行（14/22）载荷不同，判 ambiguous collision。',
+    status: 'concept_supported_parameter_derived',
+  },
+  {
+    t_id: 'T-AMH-01-01',
+    sample_kind: 'cross_index_discovery',
+    selection_method: 'discovered while cross-checking 跨书信号索引; included as an extra finding, not one of the three required samples',
+    book: 'Adaptive Markets (Andrew Lo)',
+    source_rel: '全书文本/Adaptive_Markets_全书文本.md',
+    patterns: [
+      { label: 'adaptive_markets_hypothesis_zh', pattern: /適應性市場假說/i },
+      { label: 'maladaptation_zh', pattern: /適應不良/i },
+    ],
+    assessment: '跨书信号索引 5 次引用并标“精读级”，但 T 注册表 0 行、Phase 文件 0 次出现；Adaptive Markets 的 Phase2 有 6 条实质信号却完全没有 T ID。该编号是悬空引用（phantom），不能用于追溯。',
+    status: 'phantom_cross_index_only',
+  },
+];
+
+const readbackPhaseHits = {};
+for (const s of READBACK_CONFIG) readbackPhaseHits[s.t_id] = [];
+for (const r of records) {
+  for (const f of r.phase.file_list) {
+    const full = path.join(ROOT, f);
+    const lines = read(full).split(/\r?\n/);
+    for (let i = 0; i < lines.length; i++) {
+      for (const s of READBACK_CONFIG) {
+        if (lines[i].includes(s.t_id)) {
+          readbackPhaseHits[s.t_id].push({
+            record_id: r.record_id,
+            title: r.title,
+            file: f,
+            line: i + 1,
+            excerpt: normWs(lines[i]).slice(0, 160),
+          });
+        }
+      }
+    }
+  }
+}
+
+const readbackSamples = READBACK_CONFIG.map(s => ({
+  t_id: s.t_id,
+  sample_kind: s.sample_kind,
+  selection_method: s.selection_method,
+  book: s.book,
+  status: s.status,
+  registry_rows: registryRowsFor(s.t_id),
+  phase_hits: readbackPhaseHits[s.t_id],
+  cross_index_hits: findLineHits(crossIndexRaw, s.t_id),
+  source_checks: scanSource(s.book, s.source_rel, s.patterns),
+  assessment: s.assessment,
+  read_verified: false,
+}));
+
+const textBearingSibling = (rec) => {
+  const cluster = duplicateClusters.find(c => c.members.some(m => m.record_id === rec.record_id));
+  if (!cluster) return false;
+  return cluster.members.some(m => {
+    if (m.record_id === rec.record_id) return false;
+    const sibling = records.find(x => x.record_id === m.record_id);
+    return sibling && (sibling.presence.fulltext_main || sibling.presence.fulltext_files > 0);
+  });
+};
+
+const sourceBlockedRecords = books.filter(r => r.audit_status === 'source_blocked');
+const phaseIncompleteRecords = books.filter(r => r.audit_status === 'phase_incomplete');
+
+const readback = {
+  generated_at: null,
+  protocol: 'DECISION §5: 1 random + 1 key + 1 controversial T; 3 passing samples do not verify a whole book.',
+  random_seed: '2026-10-20',
+  samples: readbackSamples,
+  sample_status_counts: countBy(readbackSamples.map(s => s.status)),
+  cross_index_reference_check: {
+    t_id: 'T-AMH-01-01',
+    registry_rows: registryRowsFor('T-AMH-01-01').length,
+    phase_hits: readbackPhaseHits['T-AMH-01-01'].length,
+    cross_index_hits: findLineHits(crossIndexRaw, 'T-AMH-01-01').length,
+    cross_index_labels_quality: /T-AMH-01-01[^\n]*精读级/.test(crossIndexRaw),
+    adaptive_phase_t_ids: unique((records.find(r => r.title === 'Adaptive Markets (Andrew Lo)') || { t_ids: { in_phases: [] } }).t_ids.in_phases),
+    note: '跨书信号索引是独立命名空间；47 个唯一 T ID 全部不在注册表，只有 8 个在 Phase 出现。',
+  },
+  duplicate_cluster_review: duplicateClusters.map(c => ({
+    work_key: c.work_key,
+    edition_candidate: c.edition_candidate,
+    members: c.members.map(m => {
+      const rec = records.find(x => x.record_id === m.record_id);
+      return {
+        record_id: m.record_id,
+        title: m.title,
+        audit_status: rec ? rec.audit_status : null,
+        phase_slots: rec ? rec.phase.slot_count : null,
+        text_available: rec ? (rec.presence.fulltext_main || rec.presence.fulltext_files > 0) : null,
+      };
+    }),
+    action: 'keep_both_pending_review',
+  })),
+  source_blocked_review: {
+    total: sourceBlockedRecords.length,
+    records: sourceBlockedRecords.map(r => ({
+      record_id: r.record_id,
+      title: r.title,
+      text_bearing_sibling: textBearingSibling(r),
+    })),
+    standalone_no_text: sourceBlockedRecords.filter(r => !textBearingSibling(r)).map(r => r.title),
+  },
+  phase_incomplete_review: {
+    total: phaseIncompleteRecords.length,
+    records: phaseIncompleteRecords.map(r => ({
+      record_id: r.record_id,
+      title: r.title,
+      slots: r.phase.slots,
+      complete_sibling: (() => {
+        const cluster = duplicateClusters.find(c => c.members.some(m => m.record_id === r.record_id));
+        if (!cluster) return false;
+        return cluster.members.some(m => {
+          if (m.record_id === r.record_id) return false;
+          const sibling = records.find(x => x.record_id === m.record_id);
+          return sibling && sibling.phase.slot_count === 6;
+        });
+      })(),
+    })),
+  },
+  limits: [
+    '4 samples inspected, not 128 books.',
+    'All sample read_verified=false: no book-level source_locator/claim_kind/counterexample/applicability/falsifier completion.',
+    'Excerpts are whitespace-normalized short fragments for locating only; no long text is reproduced.',
+  ],
+};
+
 const generatedAt = new Date().toISOString();
+readback.generated_at = generatedAt;
 const indexJson = {
   schema_version: 'bookknowledge.index.v1',
   generated_at: generatedAt,
@@ -597,6 +881,7 @@ const indexJson = {
     source_locator: 'T 编号到全书文字.md 的章节/段落定位；当前未计算，故不得标 PASS',
     t_registry_extra_occurrences: '271 行减去 183 个唯一编号 = 88 次重复出现',
     t_registry_colliding_ids: '出现次数 >1 的 T 编号个数；不是多余行数',
+    t_records: 'T 注册表每一行一条知识记录；record_id 为 T 行记录，work_id/edition_id/book_record_id 指向所属书目记录',
     edition_candidate_clusters: '标题归一化后同簇且含版本标记的候选簇；仅候选，未确认',
   },
   inputs: {
@@ -608,6 +893,7 @@ const indexJson = {
   summary,
   checks,
   records,
+  t_records: tRecords,
   duplicate_clusters: duplicateClusters,
   t_registry: {
     schema_header_columns: 8,
@@ -630,8 +916,13 @@ const indexJson = {
     registry_ids_unique: tRegistryIds.size,
     phase_ids_not_in_registry: tMissingFromRegistry.sort(),
     registry_ids_not_in_phases: tRegistryNotInPhases.sort(),
+    cross_index_ids_unique: crossIndexIds.length,
+    cross_index_ids_not_in_registry: crossIndexNotInRegistry.sort(),
+    cross_index_ids_in_phases: crossIndexInPhases.sort(),
+    cross_index_ids_not_in_phases: crossIndexNotInPhases.sort(),
   },
   known_issues: knownIssues,
+  readback,
 };
 
 fs.writeFileSync(path.join(OUT_DIR, 'BOOKKNOWLEDGE_INDEX.json'), JSON.stringify(indexJson, null, 2) + '\n', 'utf8');
@@ -691,12 +982,14 @@ md.push(`| 其中完全相同（exact duplicate） | ${summary.t_registry_exact_
 md.push(`| 8 列行 / 12 列行 | ${summary.t_registry_schema_shapes.v1_8col || 0} / ${summary.t_registry_schema_shapes.v2_12col || 0} |`);
 md.push(`| 字段映射不确定行 | ${summary.t_registry_field_mapping_ambiguous_rows} |`);
 md.push(`| T ID 解析失败 | ${summary.t_registry_parse_failures} |`);
+md.push(`| 每行 T 记录 / 碰撞行 / 未审阅行 | ${summary.t_records_total} / ${summary.t_records_collision} / ${summary.t_records_unreviewed} |`);
 md.push('');
 md.push(`重复次数分布：${Object.entries(summary.t_registry_distribution).map(([k, v]) => `${k} 次 × ${v} 个编号`).join('；')}。`);
 md.push('');
 md.push(`Phase 文件引用到的 T ID：${summary.t_ids_in_phases_unique} 个唯一值；不在注册表中的 ${summary.t_ids_in_phases_not_in_registry} 个；注册表有但 Phase 未引用的 ${summary.t_ids_in_registry_not_in_phases} 个。后者可能是索引示例或未落地内容，需人工判断。`);
 md.push(`另有 ${summary.nonstandard_t_tokens_in_phases} 个非标准片段（如 T-ALG、T-006），不计入 T ID 交叉核对，已单独列入 \`t_id_crosscheck.nonstandard_tokens\`。`);
 md.push(`依赖字段：注册表 \`depends_on\` ${summary.registry_rows_with_depends_on} 行、\`conflicts_with\` ${summary.registry_rows_with_conflicts_with} 行；Phase 文件 \`depends_on\` ${summary.phase_files_with_depends_on} 个、\`conflicts_with\` ${summary.phase_files_with_conflicts_with} 个。字段缺失，悬空依赖检查无法执行。`);
+md.push(`跨书信号索引：${summary.cross_index_ids_unique} 个唯一 T ID；${summary.cross_index_ids_not_in_registry} 个不在 T 注册表；仅 ${summary.cross_index_ids_in_phases} 个在 Phase 文件出现，${summary.cross_index_ids_not_in_phases} 个未出现。该索引是独立命名空间，不能当作注册表或已验证知识。`);
 md.push('');
 md.push('## 4. 记录级审计状态');
 md.push('');
@@ -705,13 +998,32 @@ md.push('|---|---:|');
 const auditStatusDist = countBy(records.map(r => r.audit_status));
 for (const [k, v] of Object.entries(auditStatusDist).sort((a, b) => b[1] - a[1])) md.push(`| \`${k}\` | ${v} |`);
 md.push('');
-md.push('## 5. 已知问题');
+md.push('## 5. 回读样本（2026-10-20）');
+md.push('');
+md.push(`抽样协议：1 随机（seed=\`${readback.random_seed}\`）+ 1 关键 + 1 争议；另加 1 个跨书索引悬空编号。四样本均 \`read_verified=false\`，不构成整书验收。`);
+md.push('');
+md.push('| T ID | 类型 | 注册表行 | Phase 命中 | 原文核验（首个命中行） | 结论 |');
+md.push('|---|---|---:|---:|---|---|');
+for (const s of readbackSamples) {
+  const src = s.source_checks.exists
+    ? (s.source_checks.checks.filter(c => c.found).map(c => `${c.label}:${c.hits.slice(0, 3).map(h => 'L' + h.line).join('|')}`).join('；') || 'no hit')
+    : 'source missing';
+  md.push(`| \`${s.t_id}\` | ${s.sample_kind} | ${s.registry_rows.length} | ${s.phase_hits.length} | ${src} | \`${s.status}\` |`);
+}
+md.push('');
+md.push(`跨书索引悬空引用：\`T-AMH-01-01\` 在索引出现 ${readback.cross_index_reference_check.cross_index_hits} 次，注册表 ${readback.cross_index_reference_check.registry_rows} 行，Phase ${readback.cross_index_reference_check.phase_hits} 次；Adaptive Markets 全部 Phase 文件共 ${readback.cross_index_reference_check.adaptive_phase_t_ids.length} 个 T ID。`);
+md.push('');
+md.push(`重复候选 ${readback.duplicate_cluster_review.length} 簇，全部 \`keep_both_pending_review\`，本轮不合并。`);
+md.push(`\`source_blocked\` ${readback.source_blocked_review.total} 条：${readback.source_blocked_review.total - readback.source_blocked_review.standalone_no_text.length} 条有含文本的重复候选兄弟（不是独立作品缺口），${readback.source_blocked_review.standalone_no_text.length} 条为无文本独立作品——${readback.source_blocked_review.standalone_no_text.join('；')}。`);
+md.push(`\`phase_incomplete\` ${readback.phase_incomplete_review.total} 条：${readback.phase_incomplete_review.records.map(r => `${r.title}（slots ${r.slots.join(',')}，完整兄弟=${r.complete_sibling}）`).join('；')}。`);
+md.push('');
+md.push('## 6. 已知问题');
 md.push('');
 md.push('| 代码 | 严重度 | 证据 | 状态 |');
 md.push('|---|---|---|---|');
 for (const i of knownIssues) md.push(`| \`${i.code}\` | ${i.severity} | ${i.evidence.replace(/\|/g, '/')} | ${i.resolution_state} |`);
 md.push('');
-md.push('## 6. 复现');
+md.push('## 7. 复现');
 md.push('');
 md.push('```bash');
 md.push('cd BookKnowledge');
