@@ -1,6 +1,6 @@
 {
   "schema_version": "bookknowledge.index.v1",
-  "generated_at": "2026-10-20T06:05:18.177Z",
+  "generated_at": "2026-10-20T07:35:37.144Z",
   "generator": "build_bookknowledge_index.js",
   "source_root_label": "BOOKKNOWLEDGE_DIR",
   "definitions": {
@@ -28030,7 +28030,7 @@
     }
   ],
   "readback": {
-    "generated_at": "2026-10-20T06:05:18.177Z",
+    "generated_at": "2026-10-20T07:35:37.144Z",
     "protocol": "DECISION §5: 1 random + 1 key + 1 controversial T; 3 passing samples do not verify a whole book.",
     "random_seed": "2026-10-20",
     "samples": [
@@ -28703,8 +28703,996 @@
         }
       ]
     },
+    "quality_readback": {
+      "marked_books": 22,
+      "by_tier": {
+        "精读级": 18,
+        "框架级": 4
+      },
+      "phase2_stub_books": [
+        "Forex Price Action Scalping an in-depth look into the field of professional scalping (Bob Volman)",
+        "Markets in Profile 278 (Wiley Trading) ( etc.)",
+        "Mind Over Markets Power Trading with Market Generated Information ( etc.)",
+        "More Money Than God Hedge Funds and the Making of a New Elite (Sebastian Mallaby)",
+        "Study Guide to Technical Analysis of the Financial Markets (John J. Murphy)"
+      ],
+      "phase2_stub_signatures": {
+        "5d096fe0a8": 5
+      },
+      "phase2_substantive_books": 17,
+      "phase2_with_t_ids": [
+        {
+          "title": "How to Read a Book (Adler)",
+          "level": "框架级",
+          "t_ids": [
+            "T-READ-001",
+            "T-READ-002",
+            "T-READ-003",
+            "T-READ-004"
+          ],
+          "registered": 0
+        },
+        {
+          "title": "My Life as a Quant (Derman)",
+          "level": "框架级",
+          "t_ids": [
+            "T-KLD-001",
+            "T-KLD-002",
+            "T-KLD-003",
+            "T-KLD-004"
+          ],
+          "registered": 0
+        },
+        {
+          "title": "The Art of Strategy (Dixit)",
+          "level": "框架级",
+          "t_ids": [
+            "T-GAME-001",
+            "T-GAME-002",
+            "T-GAME-003",
+            "T-GAME-004"
+          ],
+          "registered": 0
+        },
+        {
+          "title": "The Man Who Solved the Market (Zuckerman)",
+          "level": "框架级",
+          "t_ids": [
+            "T-SIM-001",
+            "T-SIM-002",
+            "T-SIM-003",
+            "T-SIM-004"
+          ],
+          "registered": 0
+        }
+      ],
+      "phase2_t_ids_unique": 16,
+      "phase2_t_ids_registered": 0,
+      "phase2_t_ids_in_cross_index": 8,
+      "phase2_t_ids_in_cross_index_list": [
+        "T-GAME-001",
+        "T-GAME-002",
+        "T-KLD-001",
+        "T-KLD-002",
+        "T-READ-001",
+        "T-READ-002",
+        "T-SIM-001",
+        "T-SIM-002"
+      ],
+      "books_with_locator_signal": [
+        {
+          "title": "Volume Price Analysis The Ultimate Beginners Guide on How to Use Volume Price Action Strategies and Trading Technical… (George Milton)",
+          "level": "精读级",
+          "signals": 1
+        }
+      ],
+      "marker_coverage": {
+        "all": 13,
+        "partial": 9
+      },
+      "marker_level_mismatch_books": [],
+      "tier_inversion": {
+        "jingdu_with_t_ids": 0,
+        "framework_with_t_ids": 4
+      },
+      "books": [
+        {
+          "record_id": "bk-343f5d57cb",
+          "title": "Expected Returns (Antti Ilmanen)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Expected Returns (Antti Ilmanen)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 152,
+            "bytes": 10266,
+            "sha256": "8714f88b6c5788053923780ccbcd096951bc7f1a61dcde73de7198f1348e75a8",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-964a3f3b47",
+          "title": "Forex Price Action Scalping an in-depth look into the field of professional scalping (Bob Volman)",
+          "declared_level": "精读级",
+          "phase_files_total": 11,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Forex Price Action Scalping an in-depth look into the field of professional scalping (Bob Volman)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 9,
+            "bytes": 166,
+            "sha256": "5d096fe0a8c42532acd565f02604fafb3aa5f01929662c4cbabb4832d3794ef2",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": true,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-c6adc35ecd",
+          "title": "How to Read a Book (Adler)",
+          "declared_level": "框架级",
+          "phase_files_total": 3,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "框架级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/How to Read a Book (Adler)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 41,
+            "bytes": 1787,
+            "sha256": "cddbf3d17c4a5b2623daea2c9ae747d3506023f014a65982e9d7fb39795224b9",
+            "t_ids": [
+              "T-READ-001",
+              "T-READ-002",
+              "T-READ-003",
+              "T-READ-004"
+            ],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-6eab7e779c",
+          "title": "Inside the Black Box. A Simple Guide to Systematic Investing (Rishi K. Narang)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Inside the Black Box. A Simple Guide to Systematic Investing (Rishi K. Narang)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 130,
+            "bytes": 5844,
+            "sha256": "8c043f41daf83425971e99bdf4f297166af310a8d59fb5f370feb948c285c7fc",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-230fa945cf",
+          "title": "Manias, Panics, and Crashes A History of Financial Crises (Robert Z. Aliber, Charles P. Kindleberger etc.)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Manias, Panics, and Crashes A History of Financial Crises (Robert Z. Aliber, Charles P. Kindleberger etc.)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 172,
+            "bytes": 8194,
+            "sha256": "e356535d002f5bfd2084ad9ebd500e1bcb2997005187149d7a86855e59f16ffb",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-bc47775886",
+          "title": "Markets in Profile 278 (Wiley Trading) ( etc.)",
+          "declared_level": "精读级",
+          "phase_files_total": 10,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Markets in Profile 278 (Wiley Trading) ( etc.)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 9,
+            "bytes": 166,
+            "sha256": "5d096fe0a8c42532acd565f02604fafb3aa5f01929662c4cbabb4832d3794ef2",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": true,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-d91a5bb802",
+          "title": "Mind Over Markets Power Trading with Market Generated Information ( etc.)",
+          "declared_level": "精读级",
+          "phase_files_total": 11,
+          "marker_files": [
+            {
+              "file": "Phase0_基本信息.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Mind Over Markets Power Trading with Market Generated Information ( etc.)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 9,
+            "bytes": 166,
+            "sha256": "5d096fe0a8c42532acd565f02604fafb3aa5f01929662c4cbabb4832d3794ef2",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": true,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-45cdc09e45",
+          "title": "More Money Than God Hedge Funds and the Making of a New Elite (Sebastian Mallaby)",
+          "declared_level": "精读级",
+          "phase_files_total": 11,
+          "marker_files": [
+            {
+              "file": "Phase0_状态与评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/More Money Than God Hedge Funds and the Making of a New Elite (Sebastian Mallaby)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 9,
+            "bytes": 166,
+            "sha256": "5d096fe0a8c42532acd565f02604fafb3aa5f01929662c4cbabb4832d3794ef2",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": true,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-d8dbcf2968",
+          "title": "My Life as a Quant (Derman)",
+          "declared_level": "框架级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "框架级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/My Life as a Quant (Derman)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 42,
+            "bytes": 1885,
+            "sha256": "f5f8b499ea55c3a88c0c185114e7c1bbb931f9202aa934eac9148ff601d8d325",
+            "t_ids": [
+              "T-KLD-001",
+              "T-KLD-002",
+              "T-KLD-003",
+              "T-KLD-004"
+            ],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-7ac44ba06a",
+          "title": "Narrative Economics (Shiller)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Narrative Economics (Shiller)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 105,
+            "bytes": 5368,
+            "sha256": "b2dfdf174896ff234ab561d8afe6e5f00cd9a3c34f1ee86d8e862d846c7030b2",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-6478969541",
+          "title": "Skin in the Game (Taleb)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Skin in the Game (Taleb)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 182,
+            "bytes": 9996,
+            "sha256": "d32a47b4546188b056199a8461418ff5852ccb9bceff5d5e4d4403e56c0df8bd",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-9e148e10bf",
+          "title": "Study Guide to Technical Analysis of the Financial Markets (John J. Murphy)",
+          "declared_level": "精读级",
+          "phase_files_total": 10,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Study Guide to Technical Analysis of the Financial Markets (John J. Murphy)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 9,
+            "bytes": 166,
+            "sha256": "5d096fe0a8c42532acd565f02604fafb3aa5f01929662c4cbabb4832d3794ef2",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": true,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-6e3b2e54b8",
+          "title": "The Art of Strategy (Dixit Nalebuff)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/The Art of Strategy (Dixit Nalebuff)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 119,
+            "bytes": 6164,
+            "sha256": "15b77bc9992c2f343750a856a21e740a97ab1cf30799dd3aece0ba5aaf457524",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-5b30c4926a",
+          "title": "The Art of Strategy (Dixit)",
+          "declared_level": "框架级",
+          "phase_files_total": 3,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "框架级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/The Art of Strategy (Dixit)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 42,
+            "bytes": 1660,
+            "sha256": "f0e992a0bce7296fe406798f8542f7a4a5b23ab15a7a077be11dff2945f15994",
+            "t_ids": [
+              "T-GAME-001",
+              "T-GAME-002",
+              "T-GAME-003",
+              "T-GAME-004"
+            ],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-c512b09ce9",
+          "title": "The Man Who Solved the Market (Zuckerman)",
+          "declared_level": "框架级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "框架级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "框架级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/The Man Who Solved the Market (Zuckerman)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 42,
+            "bytes": 1714,
+            "sha256": "59691ac48979a2b2e23fa77903d42363535af1ec3e58ce1788117125497befa6",
+            "t_ids": [
+              "T-SIM-001",
+              "T-SIM-002",
+              "T-SIM-003",
+              "T-SIM-004"
+            ],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-ff70cfd5a3",
+          "title": "The Misbehavior of Markets A Fractal View of Financial Turbulence (Benoit Mandelbrot, Richard L. Hudson)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/The Misbehavior of Markets A Fractal View of Financial Turbulence (Benoit Mandelbrot, Richard L. Hudson)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 128,
+            "bytes": 5631,
+            "sha256": "2a31342e5103973ed64c88d041771cf7592c964d0bf6f457429878e7acf4bf29",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-7a8d8d87b2",
+          "title": "The Structure of Scientific Revolutions (Kuhn)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/The Structure of Scientific Revolutions (Kuhn)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 116,
+            "bytes": 5017,
+            "sha256": "e959208491a8253b2e33299bd395ff00f5b24670be8f87dce57b02dd377d4a06",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-021f564939",
+          "title": "Thinking in Bets Making Smarter Decisions When You Dont Have All the Facts (Annie Duke)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Thinking in Bets Making Smarter Decisions When You Dont Have All the Facts (Annie Duke)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 83,
+            "bytes": 5705,
+            "sha256": "e471bcc560dd1a4d90ce0295d23fb200493a76d309499579beb8e54c2bc1906d",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-33191bcaf9",
+          "title": "Trend Following Masters Trading Psychology Conversations (Michael Covel)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Trend Following Masters Trading Psychology Conversations (Michael Covel)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 176,
+            "bytes": 7889,
+            "sha256": "95dbad145eaa342b2f881b634376bb0bd87abe1a7e83410a6794cd6bb2f27587",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-69a49b629b",
+          "title": "Valuation Measuring and Managing the Value of Companies (McKinsey  Company Inc., Tim Koller etc.)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Valuation Measuring and Managing the Value of Companies (McKinsey  Company Inc., Tim Koller etc.)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 235,
+            "bytes": 7620,
+            "sha256": "954b44c7c3c6c66e6e13a3583c5716f1f3f187107916c21302e8b182a7c74baa",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-b9029d5322",
+          "title": "Value Investing, Second Edition (Bruce C N Greenwald)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase1_核心框架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase2_关键信号与可执行判据.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase3_深度评估_跟书吵架.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase4_实践适配.md",
+              "level": "精读级"
+            },
+            {
+              "file": "Phase5_验证计划与整体评估.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "all",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Value Investing, Second Edition (Bruce C N Greenwald)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 68,
+            "bytes": 4790,
+            "sha256": "3f5cc08a62248a48efb22af595e3626f013fdc0c36eea62640a3cca5c9e7e30c",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 0
+          },
+          "source_text": true
+        },
+        {
+          "record_id": "bk-bf2ed11232",
+          "title": "Volume Price Analysis The Ultimate Beginners Guide on How to Use Volume Price Action Strategies and Trading Technical… (George Milton)",
+          "declared_level": "精读级",
+          "phase_files_total": 6,
+          "marker_files": [
+            {
+              "file": "Phase0_元信息与定位.md",
+              "level": "精读级"
+            }
+          ],
+          "marker_coverage": "partial",
+          "phase2": {
+            "file": "A_已完成_可调用技能/Volume Price Analysis The Ultimate Beginners Guide on How to Use Volume Price Action Strategies and Trading Technical… (George Milton)/拆解记录/Phase2_关键信号与可执行判据.md",
+            "exists": true,
+            "lines": 83,
+            "bytes": 3780,
+            "sha256": "868baee70a169bc9557665e43f9c66613827e640fffe54d8311632adfe537703",
+            "t_ids": [],
+            "t_ids_registered": [],
+            "stub": false,
+            "locator_signals": 1
+          },
+          "source_text": true
+        }
+      ],
+      "content_sample": {
+        "book": "Narrative Economics (Shiller)",
+        "level": "精读级",
+        "phase2": {
+          "lines": 105,
+          "bytes": 5368,
+          "t_ids": [],
+          "locator_signals": 0
+        },
+        "source_checks": {
+          "file": "A_已完成_可调用技能/Narrative Economics (Shiller)/全书文本/全书文字.md",
+          "exists": true,
+          "chars": 821403,
+          "checks": [
+            {
+              "label": "contagion_rate",
+              "found": true,
+              "hits": [
+                {
+                  "char_offset": 44171,
+                  "excerpt": " identified a person who may be Nakamoto. The repeated publicity for an intriguing mystery made the contagion rate of the Bitcoin narrative higher than it would have been otherwise. Bitcoin and the Fear of Inequality In addition to ta"
+                }
+              ]
+            },
+            {
+              "label": "recovery_rate",
+              "found": true,
+              "hits": [
+                {
+                  "char_offset": 64584,
+                  "excerpt": "riod is a time when the contagion rate , the rate of increase of newly infected people, exceeds the recovery rate plus the death rate. During the rising period, the rise in the number of infected people due to contagion outnumbers th"
+                }
+              ]
+            },
+            {
+              "label": "sir_acronym",
+              "found": true,
+              "hits": [
+                {
+                  "char_offset": 73694,
+                  "excerpt": "book looks at theories and models from epidemiology, including the original 1927 Kermack-McKendrick SIR model, to help explain the spread of economic narratives. These models divide the population into compartments: suscept"
+                }
+              ]
+            },
+            {
+              "label": "threshold_15pct",
+              "found": false,
+              "hits": []
+            },
+            {
+              "label": "threshold_10pct",
+              "found": true,
+              "hits": [
+                {
+                  "char_offset": 209493,
+                  "excerpt": "ant economic decisions, such as how much to save for retirement. Should you save 5% of your income? 10%? more? Try to remember any conversation on this topic, and likely you won’t dredge up a single one. And yet people have"
+                }
+              ]
+            }
+          ]
+        },
+        "assessment": "SIR 的传染率/恢复率框架与 Kermack-McKendrick SIR 模型均有原文支撑（contagion rate / recovery rate / SIR 均命中）；但 15%/10% 周阈值在原文无命中（10% 仅出现在无关例子）。Phase2 有 105 行实质框架卡，但 0 个 T 编号、0 个章节/行号定位。"
+      },
+      "findings": [
+        "5/18 精读级书籍的 Phase2 是“待精读”模板（1 个相同哈希），没有信号、没有 T 编号；精读级标记只落在 Phase0 文件上（部分为非标准文件名）。",
+        "0/18 精读级 Phase2 含 T 编号；4/4 框架级含 T 编号，但 0/16 个已注册。层级倒挂：只有较低层级使用 T 编号，且全部未注册。",
+        "仅 1/22 本已标书的 Phase2 出现章节/行号定位信号；其余没有可复核定位。",
+        "标记覆盖：13 本全部 Phase 文件都有标记，9 本仅部分文件有标记。",
+        "框架级 T 编号中 8 个只出现在跨书信号索引，注册表仍为 0。"
+      ]
+    },
     "limits": [
       "4 samples inspected, not 128 books.",
+      "22 marked books inspected at Phase2/marker level; this is not a full content verification.",
       "All sample read_verified=false: no book-level source_locator/claim_kind/counterexample/applicability/falsifier completion.",
       "Excerpts are whitespace-normalized short fragments for locating only; no long text is reproduced."
     ]

@@ -1,6 +1,6 @@
 # BookKnowledge 只读索引与全量记录校验摘要
 
-- 生成时间：2026-10-20T06:05:18.177Z
+- 生成时间：2026-10-20T07:35:37.144Z
 - 输入：`A_已完成_可调用技能/index.csv`、`A_已完成_可调用技能/*/拆解记录/**/*Phase*.md`、`F_辅助产出/T注册表.md`、`F_辅助产出/跨书信号索引.md`
 - 输出：`BOOKKNOWLEDGE_INDEX.json`（机器可读，相对路径，无绝对路径）
 - 性质：**Inventory 级只读审计**；`read_verified_books = 0`，不代表任何一本书已通过内容验收。
@@ -90,7 +90,24 @@ Phase 文件引用到的 T ID：286 个唯一值；不在注册表中的 111 个
 `source_blocked` 6 条：3 条有含文本的重复候选兄弟（不是独立作品缺口），3 条为无文本独立作品——淘县大师传之炒股养家；Encyclopedia_of_Chart_Patterns；Technical_Analysis_of_Stock_Trends。
 `phase_incomplete` 2 条：How to Read a Book (Adler)（slots 0,1,2，完整兄弟=false）；The Art of Strategy (Dixit)（slots 0,1,2，完整兄弟=true）。
 
-## 6. 已知问题
+## 6. 质量标记回读（22 本已标书）
+
+| 指标 | 数值 |
+|---|---:|
+| 已标书 | 22（精读 18 / 框架 4） |
+| Phase2 为“待精读”模板 | 5（同一哈希簇 1 个） |
+| Phase2 有实质内容 | 17 |
+| Phase2 含 T 编号的书 | 4（精读 0 / 框架 4） |
+| Phase2 T 编号唯一值 / 已注册 | 16 / 0 |
+| Phase2 有章节/行号定位信号的书 | 1 |
+| 标记覆盖：全部 / 部分 | 13 / 9 |
+
+空壳书（Phase2 为 9 行、同一哈希）：Forex Price Action Scalping an in-depth look into the field of professional scalping (Bob Volman)；Markets in Profile 278 (Wiley Trading) ( etc.)；Mind Over Markets Power Trading with Market Generated Information ( etc.)；More Money Than God Hedge Funds and the Making of a New Elite (Sebastian Mallaby)；Study Guide to Technical Analysis of the Financial Markets (John J. Murphy)。这些书都有可用文本，不是 `source_blocked`；`quality_level: 精读级` 与 `status: done` 写在 Phase0 文件上（部分为非标准文件名），Phase2 明写“待精读”。
+层级倒挂：0 本精读级含 T 编号，4 本框架级含 T 编号；16 个 Phase2 T 编号中 0 个在注册表，8 个只在跨书索引。
+有定位信号的书：Volume Price Analysis The Ultimate Beginners Guide on How to Use Volume Price Action Strategies and Trading Technical… (George Milton)（1 处）。其余已标书没有可复核的章节/行号定位。
+实质样本 Narrative Economics：Phase2 105 行、0 个 T 编号、0 个定位。SIR 的传染率/恢复率框架与 Kermack-McKendrick SIR 模型均有原文支撑（contagion rate / recovery rate / SIR 均命中）；但 15%/10% 周阈值在原文无命中（10% 仅出现在无关例子）。Phase2 有 105 行实质框架卡，但 0 个 T 编号、0 个章节/行号定位。
+
+## 7. 已知问题
 
 | 代码 | 严重度 | 证据 | 状态 |
 |---|---|---|---|
@@ -105,7 +122,7 @@ Phase 文件引用到的 T ID：286 个唯一值；不在注册表中的 111 个
 | `DEPENDENCY_FIELDS_ABSENT` | high | registry depends_on=0; conflicts_with=0; phase depends_on=0; conflicts_with=0 | open |
 | `READ_NOT_VERIFIED` | high | read_verified_books=0/128 | open |
 
-## 7. 复现
+## 8. 复现
 
 ```bash
 cd BookKnowledge

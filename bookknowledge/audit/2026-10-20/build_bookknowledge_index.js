@@ -783,6 +783,119 @@ const readbackSamples = READBACK_CONFIG.map(s => ({
   read_verified: false,
 }));
 
+const markedBooks = books.filter(r => ['精读级', '框架级'].includes(r.quality.declared_level));
+const qualityBookProbes = markedBooks.map(r => {
+  const p2rel = r.phase.file_list.find(f => /Phase2/.test(f)) || null;
+  let p2 = { file: p2rel, exists: false, t_ids: [], t_ids_registered: [], stub: false, locator_signals: 0 };
+  if (p2rel) {
+    const text = read(path.join(ROOT, p2rel));
+    const tids = unique([...text.matchAll(T_TOKEN)].map(m => m[0]).filter(id => T_ID_CANON.test(id)));
+    p2 = {
+      file: p2rel,
+      exists: true,
+      lines: text.split(/\r?\n/).length,
+      bytes: Buffer.byteLength(text),
+      sha256: sha256(text),
+      t_ids: tids,
+      t_ids_registered: tids.filter(id => tRegistryIds.has(id)),
+      stub: /待精读/.test(text) && tids.length === 0,
+      locator_signals: (text.match(/\bCh\s*\d+|第\s*\d+\s*章|p\.\s*\d+|(?<![A-Za-z])L\d+|line\s*\d+/gi) || []).length,
+    };
+  }
+  const markerFiles = [];
+  for (const f of r.phase.file_list) {
+    const text = read(path.join(ROOT, f));
+    const m = text.match(/^\s*quality_level\s*:\s*([^\n\r#]+)/m);
+    if (m) markerFiles.push({ file: path.basename(f), level: m[1].trim() });
+  }
+  return {
+    record_id: r.record_id,
+    title: r.title,
+    declared_level: r.quality.declared_level,
+    phase_files_total: r.phase.files_total,
+    marker_files: markerFiles,
+    marker_coverage: markerFiles.length === r.phase.files_total ? 'all' : (markerFiles.length ? 'partial' : 'none'),
+    phase2: p2,
+    source_text: r.presence.fulltext_main || r.presence.fulltext_files > 0,
+  };
+});
+
+const tierProbes = (tier) => qualityBookProbes.filter(x => x.declared_level === tier);
+const stubProbes = qualityBookProbes.filter(x => x.phase2.stub);
+const jingduProbes = tierProbes('精读级');
+const frameworkProbes = tierProbes('框架级');
+const jingduWithTids = jingduProbes.filter(x => x.phase2.t_ids.length > 0);
+const frameworkWithTids = frameworkProbes.filter(x => x.phase2.t_ids.length > 0);
+const allMarkedPhase2Tids = unique(qualityBookProbes.flatMap(x => x.phase2.t_ids));
+
+function scanSourceWindow(bookTitle, sourceRel, patterns) {
+  const fileRel = `A_已完成_可调用技能/${bookTitle}/${sourceRel}`;
+  const full = path.join(ROOT, fileRel);
+  if (!existsFile(full)) return { file: fileRel, exists: false, checks: patterns.map(p => ({ label: p.label, found: false, hits: [] })) };
+  const text = read(full);
+  const checks = patterns.map(p => {
+    const re = new RegExp(p.pattern.source, p.pattern.flags.includes('i') ? 'i' : '');
+    const m = re.exec(text);
+    if (!m) return { label: p.label, found: false, hits: [] };
+    const s = Math.max(0, m.index - 100);
+    const e = Math.min(text.length, m.index + m[0].length + 120);
+    return { label: p.label, found: true, hits: [{ char_offset: m.index, excerpt: text.slice(s, e).replace(/\s+/g, ' ') }] };
+  });
+  return { file: fileRel, exists: true, chars: text.length, checks };
+}
+
+const qualityContentSample = {
+  book: 'Narrative Economics (Shiller)',
+  level: '精读级',
+  phase2: (() => {
+    const p = qualityBookProbes.find(x => x.title === 'Narrative Economics (Shiller)');
+    return p ? { lines: p.phase2.lines, bytes: p.phase2.bytes, t_ids: p.phase2.t_ids, locator_signals: p.phase2.locator_signals } : null;
+  })(),
+  source_checks: scanSourceWindow('Narrative Economics (Shiller)', '全书文本/全书文字.md', [
+    { label: 'contagion_rate', pattern: /contagion rate/i },
+    { label: 'recovery_rate', pattern: /recovery rate/i },
+    { label: 'sir_acronym', pattern: /\bSIR\b/ },
+    { label: 'threshold_15pct', pattern: /15\s*%/ },
+    { label: 'threshold_10pct', pattern: /10\s*%/ },
+  ]),
+  assessment: 'SIR 的传染率/恢复率框架与 Kermack-McKendrick SIR 模型均有原文支撑（contagion rate / recovery rate / SIR 均命中）；但 15%/10% 周阈值在原文无命中（10% 仅出现在无关例子）。Phase2 有 105 行实质框架卡，但 0 个 T 编号、0 个章节/行号定位。',
+};
+
+const qualityReadback = {
+  marked_books: qualityBookProbes.length,
+  by_tier: { 精读级: jingduProbes.length, 框架级: frameworkProbes.length },
+  phase2_stub_books: stubProbes.map(x => x.title),
+  phase2_stub_signatures: countBy(stubProbes.map(x => x.phase2.sha256.slice(0, 10))),
+  phase2_substantive_books: qualityBookProbes.filter(x => x.phase2.exists && !x.phase2.stub).length,
+  phase2_with_t_ids: qualityBookProbes
+    .filter(x => x.phase2.t_ids.length > 0)
+    .map(x => ({ title: x.title, level: x.declared_level, t_ids: x.phase2.t_ids, registered: x.phase2.t_ids_registered.length })),
+  phase2_t_ids_unique: allMarkedPhase2Tids.length,
+  phase2_t_ids_registered: allMarkedPhase2Tids.filter(id => tRegistryIds.has(id)).length,
+  phase2_t_ids_in_cross_index: allMarkedPhase2Tids.filter(id => crossIndexIds.includes(id)).length,
+  phase2_t_ids_in_cross_index_list: allMarkedPhase2Tids.filter(id => crossIndexIds.includes(id)).sort(),
+  books_with_locator_signal: qualityBookProbes
+    .filter(x => x.phase2.locator_signals > 0)
+    .map(x => ({ title: x.title, level: x.declared_level, signals: x.phase2.locator_signals })),
+  marker_coverage: countBy(qualityBookProbes.map(x => x.marker_coverage)),
+  marker_level_mismatch_books: qualityBookProbes
+    .filter(x => new Set(x.marker_files.map(m => m.level)).size > 1)
+    .map(x => x.title),
+  tier_inversion: {
+    jingdu_with_t_ids: jingduWithTids.length,
+    framework_with_t_ids: frameworkWithTids.length,
+  },
+  books: qualityBookProbes,
+  content_sample: qualityContentSample,
+  findings: [
+    `${stubProbes.length}/${jingduProbes.length} 精读级书籍的 Phase2 是“待精读”模板（${Object.keys(countBy(stubProbes.map(x => x.phase2.sha256.slice(0, 10)))).length} 个相同哈希），没有信号、没有 T 编号；精读级标记只落在 Phase0 文件上（部分为非标准文件名）。`,
+    `${jingduWithTids.length}/${jingduProbes.length} 精读级 Phase2 含 T 编号；${frameworkWithTids.length}/${frameworkProbes.length} 框架级含 T 编号，但 ${allMarkedPhase2Tids.filter(id => tRegistryIds.has(id)).length}/${allMarkedPhase2Tids.length} 个已注册。层级倒挂：只有较低层级使用 T 编号，且全部未注册。`,
+    `仅 ${qualityBookProbes.filter(x => x.phase2.locator_signals > 0).length}/${qualityBookProbes.length} 本已标书的 Phase2 出现章节/行号定位信号；其余没有可复核定位。`,
+    `标记覆盖：${countBy(qualityBookProbes.map(x => x.marker_coverage)).all || 0} 本全部 Phase 文件都有标记，${countBy(qualityBookProbes.map(x => x.marker_coverage)).partial || 0} 本仅部分文件有标记。`,
+    `框架级 T 编号中 ${allMarkedPhase2Tids.filter(id => crossIndexIds.includes(id)).length} 个只出现在跨书信号索引，注册表仍为 0。`,
+  ],
+};
+
 const textBearingSibling = (rec) => {
   const cluster = duplicateClusters.find(c => c.members.some(m => m.record_id === rec.record_id));
   if (!cluster) return false;
@@ -852,8 +965,10 @@ const readback = {
       })(),
     })),
   },
+  quality_readback: qualityReadback,
   limits: [
     '4 samples inspected, not 128 books.',
+    '22 marked books inspected at Phase2/marker level; this is not a full content verification.',
     'All sample read_verified=false: no book-level source_locator/claim_kind/counterexample/applicability/falsifier completion.',
     'Excerpts are whitespace-normalized short fragments for locating only; no long text is reproduced.',
   ],
@@ -1017,13 +1132,31 @@ md.push(`重复候选 ${readback.duplicate_cluster_review.length} 簇，全部 \
 md.push(`\`source_blocked\` ${readback.source_blocked_review.total} 条：${readback.source_blocked_review.total - readback.source_blocked_review.standalone_no_text.length} 条有含文本的重复候选兄弟（不是独立作品缺口），${readback.source_blocked_review.standalone_no_text.length} 条为无文本独立作品——${readback.source_blocked_review.standalone_no_text.join('；')}。`);
 md.push(`\`phase_incomplete\` ${readback.phase_incomplete_review.total} 条：${readback.phase_incomplete_review.records.map(r => `${r.title}（slots ${r.slots.join(',')}，完整兄弟=${r.complete_sibling}）`).join('；')}。`);
 md.push('');
-md.push('## 6. 已知问题');
+md.push('## 6. 质量标记回读（22 本已标书）');
+md.push('');
+md.push('| 指标 | 数值 |');
+md.push('|---|---:|');
+md.push(`| 已标书 | ${qualityReadback.marked_books}（精读 ${qualityReadback.by_tier['精读级']} / 框架 ${qualityReadback.by_tier['框架级']}） |`);
+md.push(`| Phase2 为“待精读”模板 | ${qualityReadback.phase2_stub_books.length}（同一哈希簇 ${Object.keys(qualityReadback.phase2_stub_signatures).length} 个） |`);
+md.push(`| Phase2 有实质内容 | ${qualityReadback.phase2_substantive_books} |`);
+md.push(`| Phase2 含 T 编号的书 | ${qualityReadback.phase2_with_t_ids.length}（精读 ${qualityReadback.phase2_with_t_ids.filter(x => x.level === '精读级').length} / 框架 ${qualityReadback.phase2_with_t_ids.filter(x => x.level === '框架级').length}） |`);
+md.push(`| Phase2 T 编号唯一值 / 已注册 | ${qualityReadback.phase2_t_ids_unique} / ${qualityReadback.phase2_t_ids_registered} |`);
+md.push(`| Phase2 有章节/行号定位信号的书 | ${qualityReadback.books_with_locator_signal.length} |`);
+md.push(`| 标记覆盖：全部 / 部分 | ${qualityReadback.marker_coverage.all || 0} / ${qualityReadback.marker_coverage.partial || 0} |`);
+md.push('');
+md.push(`空壳书（Phase2 为 ${unique(stubProbes.map(x => x.phase2.lines)).join('/')} 行、同一哈希）：${qualityReadback.phase2_stub_books.join('；')}。这些书都有可用文本，不是 \`source_blocked\`；\`quality_level: 精读级\` 与 \`status: done\` 写在 Phase0 文件上（部分为非标准文件名），Phase2 明写“待精读”。`);
+md.push(`层级倒挂：${qualityReadback.tier_inversion.jingdu_with_t_ids} 本精读级含 T 编号，${qualityReadback.tier_inversion.framework_with_t_ids} 本框架级含 T 编号；${qualityReadback.phase2_t_ids_unique} 个 Phase2 T 编号中 ${qualityReadback.phase2_t_ids_registered} 个在注册表，${qualityReadback.phase2_t_ids_in_cross_index} 个只在跨书索引。`);
+md.push(`有定位信号的书：${qualityReadback.books_with_locator_signal.map(x => `${x.title}（${x.signals} 处）`).join('；') || '无'}。其余已标书没有可复核的章节/行号定位。`);
+const qcs = qualityReadback.content_sample;
+md.push(`实质样本 Narrative Economics：Phase2 ${qcs.phase2 ? qcs.phase2.lines : '?'} 行、${qcs.phase2 ? qcs.phase2.t_ids.length : '?'} 个 T 编号、${qcs.phase2 ? qcs.phase2.locator_signals : '?'} 个定位。${qcs.assessment}`);
+md.push('');
+md.push('## 7. 已知问题');
 md.push('');
 md.push('| 代码 | 严重度 | 证据 | 状态 |');
 md.push('|---|---|---|---|');
 for (const i of knownIssues) md.push(`| \`${i.code}\` | ${i.severity} | ${i.evidence.replace(/\|/g, '/')} | ${i.resolution_state} |`);
 md.push('');
-md.push('## 7. 复现');
+md.push('## 8. 复现');
 md.push('');
 md.push('```bash');
 md.push('cd BookKnowledge');
