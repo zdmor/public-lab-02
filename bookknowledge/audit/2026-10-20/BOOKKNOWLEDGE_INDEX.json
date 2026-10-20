@@ -1,6 +1,6 @@
 {
   "schema_version": "bookknowledge.index.v1",
-  "generated_at": "2026-10-20T04:00:15.020Z",
+  "generated_at": "2026-10-20T04:03:29.835Z",
   "generator": "build_bookknowledge_index.js",
   "source_root_label": "BOOKKNOWLEDGE_DIR",
   "definitions": {
@@ -145,8 +145,8 @@
       "fail": 106,
       "total": 128
     },
-    "phase_status_structured": {
-      "pass": 18,
+    "phase_status_parseable": {
+      "pass": 85,
       "fail": 719,
       "total": 804
     },

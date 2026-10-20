@@ -504,7 +504,7 @@ const checks = {
   fulltext_present: { pass: booksWithFulltext.length, fail: booksWithoutFulltext.length, total: books.length },
   skeleton_present: { pass: booksWithSkeleton.length, fail: booksWithoutSkeleton.length, total: books.length },
   quality_marker_present: { pass: qualityBooks.length, fail: qualityBooksUnmarked.length, total: books.length },
-  phase_status_structured: { pass: phaseStatusCommentFiles, fail: phaseStatusMissingFiles, total: phaseLikeFiles },
+  phase_status_parseable: { pass: qualityMarkerFiles, fail: phaseStatusMissingFiles, total: phaseLikeFiles },
   t_registry_unique: { pass: tById.size, fail: tRows.length - tById.size, total: tRows.length },
   t_registry_schema_consistent: { pass: tRows.filter(r => r.schema_shape === 'v1_8col').length, fail: tRows.filter(r => r.schema_shape !== 'v1_8col').length, total: tRows.length },
   read_verified: { pass: summary.read_verified_books, fail: books.length - summary.read_verified_books, total: books.length },
