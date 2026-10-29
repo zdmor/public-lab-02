@@ -1,46 +1,27 @@
 # ART · 学术文献
 
-目录 `02-学术文献`，共 644 条。标记 ⚠ 表示题名或分类置信度不足，需人工确认。
+目录 `02-学术文献`，共 566 条。标记 ⚠ 表示题名或分类置信度不足，需人工确认。
 
 | 编号 | 年份 | 题名 | 第一作者 | 刊名/编号 | 页数 |
 | --- | --- | --- | --- | --- | --- |
-| ART-0001 | 1961 | Microporous ZrO2 ⚠ | - | - | 10 |
-| ART-0002 | 1961 | Microporous ZrO2 ⚠ | - | - | 9 |
-| ART-0003 | 1963 | Membrane Transport Theory ⚠ | - | - | 82 |
-| ART-0004 | 1963 | Overview of Membrane Science and Technology ⚠ | - | - | 14 |
-| ART-0005 | 1963 | Overview of Membrane Science and Technology ⚠ | - | - | 14 |
-| ART-0006 | 1976 | КОМП’ЮТЕРНЕ МОДЕЛЮВАННЯ ХІМІКО ⚠ | - | - | 5 |
 | ART-0007 | 1985 | Development of Membrane Processes ⚠ | - | - | 16 |
-| ART-0008 | 1986 | Prog. Polym. Sci., Vol. 14, 597--627, 1989 ⚠ | - | - | 31 |
 | ART-0009 | 1986 | Prog. Polym. Sci., Vol. 14, 597--627, 1989 ⚠ | - | - | 31 |
 | ART-0010 | 1987 | 2.19 - Disposable Bioreactors ⚠ | - | - | 13 |
-| ART-0011 | 1989 | Bacteria and Virus Retention in Airby Microporous Membranes ⚠ | - | - | 9 |
 | ART-0012 | 1989 | Disposable bioreactor for cell culture using wave-induced agitation ⚠ | - | - | 10 |
 | ART-0013 | 1989 | Disposable bioreactor for cell culture using wave-induced agitation ⚠ | - | - | 10 |
 | ART-0014 | 1990 | Microstructural Optimization of Thin Supported Inorganic Membranes for Gas and Water Purification ⚠ | - | ina and silica suspensions. J. Am. Ceram | 30 |
-| ART-0015 | 1990 | Single-use bioreactor ⚠ | - | - | 4 |
-| ART-0016 | 1990 | Single-use bioreactor ⚠ | - | - | 4 |
-| ART-0017 | 1990 | Use of near infrared spectroscopy in the food industry with particular reference to its applications to on/in- ⚠ | - | - | 8 |
-| ART-0018 | 1991 | Other Membrane Processes ⚠ | - | - | 31 |
 | ART-0019 | 1992 | (6-Maleimidocaproyl)hydrazone of Doxorubicin—A New Derivative for ⚠ | - | - | 7 |
-| ART-0020 | 1993 | Monoclonal antibody production in hollow-fiber bioreactors: Process control and validation strategies for manu ⚠ | - | - | 6 |
-| ART-0021 | 1995 | Communication to the Editor ⚠ | - | - | 5 |
-| ART-0022 | 1995 | Membranes and Modules ⚠ | - | - | 82 |
 | ART-0023 | 1996 | Integrated Membrane Processes for the Preparation of Emulsions, Particles and Bubbles ⚠ | - | - | 62 |
-| ART-0024 | 1996 | Porous Membrane Reactors ⚠ | - | - | 47 |
-| ART-0025 | 1998 | Application of radial basis function and feedforward artificial ⚠ | - | 20 (1998) 67-82 | 16 |
 | ART-0026 | 1998 | Fouling in Membrane Processes ⚠ | - | - | 18 |
 | ART-0027 | 1998 | NIR-measurements of moisture changes in foods ⚠ | - | - | 10 |
 | ART-0028 | 1998 | USA105527467 ⚠ | - | - | 13 |
 | ART-0029 | 1999 | Application of Microporous Filtration in SingleâUse Systems ⚠ | - | - | 15 |
-| ART-0030 | 1999 | ASystematic Approachtothe Validation of Process Control Parametersfor Monoclonal Antibody Productionin Fed-Bat ⚠ | - | - | 14 |
 | ART-0031 | 1999 | USA104592848 ⚠ | - | - | 21 |
 | ART-0032 | 1999 | USA104643715 ⚠ | - | - | 12 |
 | ART-0033 | 1999 | USA105234605 ⚠ | - | - | 11 |
 | ART-0034 | 2000 | Comparison of Chondrogensis in Static and Perfused Bioreactor Culture | Pazzano, D. | Biotechnology Progress | 4 |
 | ART-0035 | 2000 | Fundamentals of Membrane Transport Phenomena ⚠ | Transport Phenomena | - | 34 |
 | ART-0036 | 2000 | Metabolic Controlof Recombinant Monoclonal Antibody N-Glycosylationin GS-NS0 Cells ⚠ | - | - | 13 |
-| ART-0037 | 2000 | PII: S0015-0282(01)02057-X ⚠ | - | - | 2 |
 | ART-0038 | 2001 | An Anti-CD33 Antibody−Calicheamicin Conjugate for Treatment of Acute Myeloid Leukemia. Choice of Linker | Hamann, Philip R. | Bioconjugate Chemistry | 7 |
 | ART-0039 | 2001 | Bioseparations Using Integrated Membrane Processes ⚠ | - | - | 12 |
 | ART-0040 | 2001 | Energy efficient battery management | Chiasserini, C.-F. | IEEE Journal on Selected Areas in Commun | 50 |
@@ -48,17 +29,13 @@
 | ART-0042 | 2001 | OF GLUCOSE CONCENTRATION DURING ⚠ | - | - | 5 |
 | ART-0043 | 2001 | Processing of Nanoporous and Dense Thin Film Ceramic Membranes ⚠ | Dense Thin Film Ceramic | - | 27 |
 | ART-0044 | 2001 | USX605516431 ⚠ | - | - | 8 |
-| ART-0045 | 2002 | Membranes in the Biopharmaceutical Industry ⚠ | - | - | 63 |
 | ART-0046 | 2002 | SEPARATION CONTROL BY ALTERNATING TANGENTIAL BLOWING/SUCTION AT MULTIPLE SLOTS ⚠ | - | - | 10 |
 | ART-0047 | 2002 | SEPARATION CONTROL BY ALTERNATING TANGENTIAL BLOWING/SUCTION AT MULTIPLE SLOTS ⚠ | - | - | 10 |
 | ART-0048 | 2003 | cAC10-vcMMAE, an anti-CD30–monomethyl auristatin E conjugate with potent and selective antitumor activity | Francisco, Joseph A. | Blood | 8 |
 | ART-0049 | 2003 | Care and Use Procedures: Minimate TFF Capsule ⚠ | - | - | 18 |
-| ART-0050 | 2003 | Development of potent monoclonal antibody auristatin conjugates for cancer therapy ⚠ | - | - | 8 |
 | ART-0051 | 2003 | Near-infraredspectroscopyforthedeterminationof testosteroneinthin-filmcomposites ⚠ | - | 7085(03)00345-5 | 9 |
-| ART-0052 | 2003 | S upercoiled plasmid DNA: selective purification by thiophilic/ ⚠ | - | 784 (2003) 291-300 | 10 |
 | ART-0053 | 2003 | Tech Guide: Desalting & Buffer Exchange by Dialysis, Gel Filtration or Diafiltration ⚠ | - | - | 4 |
 | ART-0054 | 2003 | USB106544424 ⚠ | - | - | 13 |
-| ART-0055 | 2004 | DEVELOPMENT OF NOVEL MICROPOROUS ZrO222 ⚠ | - | - | 14 |
 | ART-0056 | 2004 | Drug Delivery through Skin: Overcoming the Ultimate Biological Membrane ⚠ | - | - | 36 |
 | ART-0057 | 2004 | Effectsof Drug Loadingonthe Antitumor Activityofa Monoclonal Antibody Drug Conjugate ⚠ | - | - | 9 |
 | ART-0058 | 2004 | Overview of Membrane Science and Technology ⚠ | - | - | 14 |
@@ -76,8 +53,6 @@
 | ART-0070 | 2007 | Process Analytical Technology (PAT): Batch-to-batch reproducibility of fermentation processes by robust proces | Gnoth, S. | Journal of Biotechnology | 7 |
 | ART-0071 | 2007 | Separators for Lithium-Ion Batteries ⚠ | - | - | 11 |
 | ART-0072 | 2007 | Targeted Cancer Therapy: Conferring Specificity to Cytotoxic Drugs | Chari, Ravi V. J. | Accounts of Chemical Research | 10 |
-| ART-0073 | 2008 | Aeulestrasse 23 ⚠ | kerstin | - | 1 |
-| ART-0074 | 2008 | Antibody Conjugates of 7-Ethyl-10-hydroxycamptothecin (SN-38) for Targeted Cancer ⚠ | - | - | 11 |
 | ART-0075 | 2008 | Near infrared spectroscopy for on/in-line monitoring of quality in foods and beverages: A review | Huang, Haibo | Journal of Food Engineering | 11 |
 | ART-0076 | 2008 | Non-invasive quantitative assessment of the content of pharmaceutical capsules using transmission Raman spectr | Eliasson, Charlotte | Journal of Pharmaceutical and Biomedical | 9 |
 | ART-0077 | 2008 | Raman spectroscopy as a process analytical technology (PAT) tool for the in-line monitoring and understanding  | De Beer, T.R.M. | Journal of Pharmaceutical and Biomedical | 8 |
@@ -89,7 +64,6 @@
 | ART-0083 | 2009 | Manufacturing of Ceramic Membranes Consisting of ZrO2 with Tailored Microporous Structures for Nanofiltration  ⚠ | - | - | 12 |
 | ART-0084 | 2009 | Model-based computer-aided framework for design of process monitoring and analysis systems | Singh, Ravendra | Computers &amp; Chemical Engineering | 21 |
 | ART-0085 | 2009 | Optimal control of a nonlinear fed-batch fermentation process using model predictive approach | Ashoori, Ahmad | Journal of Process Control | 12 |
-| ART-0086 | 2009 | Other Membrane Processes ⚠ | - | - | 37 |
 | ART-0087 | 2009 | Quality control of packed raw materials in pharmaceutical industry | Rodionova, O.Ye. | Analytica Chimica Acta | 6 |
 | ART-0088 | 2009 | Rational and systematic protein purification process development: the next generation | Nfor, Beckley K. | Trends in Biotechnology | 7 |
 | ART-0089 | 2010 | An ontological knowledge-based system for the selection of process monitoring and analysis tools | Singh, Ravendra | Computers &amp; Chemical Engineering | 18 |
@@ -98,13 +72,9 @@
 | ART-0092 | 2010 | Nanoporous Membrane-Based Microfluidic Biosensors ⚠ | - | - | 44 |
 | ART-0093 | 2010 | Real time monitoring of multiple parameters in mammalian cell culture bioreactors using an in‐line Raman spect | Abu‐Absi, Nicholas R. | Biotechnology and Bioengineering | 7 |
 | ART-0094 | 2010 | Real-time monitoring of drug concentration in a continuous powder mixing process using NIR spectroscopy | Vanarase, Aditya U. | Chemical Engineering Science | 6 |
-| ART-0095 | 2010 | Root Cause Analysis of Tungsten-Induced Protein Aggregation in Pre-filled Syringes ⚠ | Induced Protein | - | 11 |
 | ART-0096 | 2010 | Substitution of Adenovirus Serotype 3 Hexon onto a Serotype 5 Oncolytic Adenovirus Reduces Factor X Binding, D | Short, Joshua J. | Molecular Cancer Therapeutics | 448 |
 | ART-0097 | 2011 | Analytical methods for physicochemical characterization of antibody drug conjugates | Wakankar, Aditya | mAbs | 13 |
-| ART-0098 | 2011 | Appendix C ⚠ | Edition Permeation | - | 6 |
-| ART-0099 | 2011 | Appendix C ⚠ | - | - | 16 |
 | ART-0100 | 2011 | Brentuximab Vedotin (SGN-35) | Katz, Jessica | Clinical Cancer Research | 10 |
-| ART-0101 | 2011 | Conversion Factors ⚠ | Permeability Coefficients | - | 2 |
 | ART-0102 | 2011 | Downstream bioprocessing: recent advances and future promise | Cramer, Steven M | Current Opinion in Chemical Engineering | 11 |
 | ART-0103 | 2011 | Influence of Affinity and Antigen Internalization on the Uptake and Penetration of Anti-HER2 Antibodies in Sol | Rudnick, Stephen I. | Cancer Research | 11 |
 | ART-0104 | 2011 | Rapid High-Resolution Characterization of Functionally Important Monoclonal Antibody <i>N</i>-Glycans by Capil | Szabo, Zoltan | Analytical Chemistry | 8 |
@@ -152,7 +122,6 @@
 | ART-0146 | 2014 | Continuous bioprocessing: The real thing this time? | Farid, Suzanne S | mAbs | 6 |
 | ART-0147 | 2014 | Design of high productivity sequential multi-column chromatography for antibody capture | Ng, Candy K.S. | Food and Bioproducts Processing | 9 |
 | ART-0148 | 2014 | Evolution of RNA-Protein Interactions: Non-Specific Binding Led to RNA Splicing Activity of Fungal Mitochondri | Lamech, Lilian T. | PLoS Biology | 19 |
-| ART-0149 | 2014 | Functionalized and Functionalizable Fluoropolymer Membranes ⚠ | - | - | 33 |
 | ART-0150 | 2014 | Glucose concentration control of a fed-batch mammalian cell bioprocess using a nonlinear model predictive cont | Craven, Stephen | Journal of Process Control | 14 |
 | ART-0151 | 2014 | High cell density cultivations by alternating tangential flow (ATF) perfusion for influenza A virus production | Genzel, Yvonne | Vaccine | 12 |
 | ART-0152 | 2014 | Implementation of an advanced hybrid MPC–PID control system using PAT tools into a direct compaction continuou | Singh, Ravendra | International Journal of Pharmaceutics | 17 |
@@ -195,7 +164,6 @@
 | ART-0189 | 2015 | Production of soluble and active microbial transglutaminase in<i>Escherichia coli</i>for site-specific antibod | Rickert, Mathias | Protein Science | 14 |
 | ART-0190 | 2015 | Quick generation of                     <scp>R</scp>                     aman spectroscopy based in‐process gl | Berry, Brandon N. | Biotechnology Progress | 11 |
 | ART-0191 | 2015 | Reducing hydrophobicity of homogeneous antibody-drug conjugates improves pharmacokinetics and therapeutic inde | Lyon, Robert P | Nature Biotechnology | 4 |
-| ART-0192 | 2015 | Robust Optimization, Simulation and Effective Design Space 5112015 ⚠ | - | - | 8 |
 | ART-0193 | 2015 | Site-Specific Conjugation of Monomethyl Auristatin E to Anti-CD30 Antibodies Improves Their Pharmacokinetics a | Lhospice, F. | Molecular Pharmaceutics | 9 |
 | ART-0194 | 2015 | Subscriber access provided by UIC Library ⚠ | - | - | 34 |
 | ART-0195 | 2015 | The beneficial effects of a gas-permeable flask for expansion of Tumor-Infiltrating lymphocytes as reflected i | Forget, Marie-Andrée | OncoImmunology | 7 |
@@ -236,7 +204,6 @@
 | ART-0230 | 2016 | Practical method development for the separation of monoclonal antibodies and antibody-drug-conjugate species i | Cusumano, Alessandra | Journal of Pharmaceutical and Biomedical | 13 |
 | ART-0231 | 2016 | Process characterization and Design Space definition | Hakemeyer, Christian | Biologicals | 13 |
 | ART-0232 | 2016 | Processes for Constructing Homogeneous Antibody Drug Conjugates | Jackson, David Y. | Organic Process Research &amp; Developme | 15 |
-| ART-0233 | 2017 | 08_PSeymour_Getting ready for process characterization ⚠ | - | - | 20 |
 | ART-0234 | 2017 | 13C metabolic flux analysis identifies limitations to increasing specific productivity in fed-batch and perfus | Templeton, Neil | Metabolic Engineering | 8 |
 | ART-0235 | 2017 | A Hexa-rhodium Metallopeptide Catalyst for Site-Specific Functionalization of Natural Antibodies | Ohata, Jun | Journal of the American Chemical Society | 6 |
 | ART-0236 | 2017 | Alternating flow filtration as an alternative to internal spin filter based perfusion process: Impact on produ | Bosco, Belén | Biotechnology Progress | 5 |
@@ -345,7 +312,6 @@
 | ART-0339 | 2019 | Model-Based Design and Process Optimization of Continuous Single Pass Tangential Flow Filtration Focusing on C | Huter, Maximilian J. | Processes | 21 |
 | ART-0340 | 2019 | Multi-column displacement chromatography for separation of charge variants of monoclonal antibodies | Khanal, Ohnmar | Journal of Chromatography A | 12 |
 | ART-0341 | 2019 | Multiple integrin ligands provide a highly adhesive and osteoinductive surface that improves selective cell re | Luo, Keyu | Acta Biomaterialia | 11 |
-| ART-0342 | 2019 | Polatuzumab vedotin in combination with ⚠ | - | 2045(19)30091-9 | 13 |
 | ART-0343 | 2019 | Progress on reinforced braided hollow fiber membranes in separation technologies: A review | Turken, Turker | Journal of Water Process Engineering | 10 |
 | ART-0344 | 2019 | Quality by Design characterization of the perfusion culture process for recombinant FVIII | Kim, Yong Jae | Biologicals | 10 |
 | ART-0345 | 2019 | Rapid development of clone‐specific, high‐performing perfusion media from established feed supplements | Mayrhofer, Patrick | Biotechnology Progress | 14 |
@@ -437,7 +403,6 @@
 | ART-0431 | 2021 | An integrated approach for modeling and identification of perfusion bioreactors via basis flux modes | Rodrigues, Diogo | Computers &amp; Chemical Engineering | 35 |
 | ART-0432 | 2021 | Antibody disulfide bond reduction and recovery during biopharmaceutical process development—A review | Ren, Tingwei | Biotechnology and Bioengineering | 16 |
 | ART-0433 | 2021 | Application of metabolic modeling for targeted optimization of high seeding density processes | Brunner, Matthias | Biotechnology and Bioengineering | 12 |
-| ART-0434 | 2021 | C78C101C117C114C97C108C45C78C101C116C119C111C114C107C115C45C66C97C115C101C100 ⚠ | - | - | 10 |
 | ART-0435 | 2021 | Cell culture-based production of defective interfering influenza A virus particles in perfusion mode using an  | Hein, Marc D. | - | 23 |
 | ART-0436 | 2021 | Challenges in process control for continuous processing for production of monoclonal antibody products | Rathore, Anurag S | Current Opinion in Chemical Engineering | 10 |
 | ART-0437 | 2021 | Chemical Components of the Fruits of <i>Morus nigra</i> Linn.: Methyl Caffeate as a Potential Anticancer Agent | Wang, Yali | Journal of Agricultural and Food Chemist | 12 |
@@ -449,7 +414,6 @@
 | ART-0443 | 2021 | Impact of failure rates, lot definitions and scheduling of upstream processes on the productivity of continuou | Satzer, Peter | Journal of Chemical Technology &amp; Bio | 11 |
 | ART-0444 | 2021 | Influence of repeated freeze–thaw treatments on the functional and structural properties of myofibrillar prote | Du, Xin | Food Biophysics | 10 |
 | ART-0445 | 2021 | Model-assisted approaches for continuous chromatography: Current situation and challenges | Lin, Dong-Qiang | Journal of Chromatography A | 12 |
-| ART-0446 | 2021 | Modulationand Modeling of Monoclonal Antibody N-Linked Glycosylation in Mammalian Cell Perfusion Reactors ⚠ | - | 10.1002/bit.26315/abstract | 13 |
 | ART-0447 | 2021 | MR Accuracy Reports is one of the most trusted firms for syndicated research services. We are one of the top m ⚠ | - | - | 69 |
 | ART-0448 | 2021 | Multiplexed Microfluidic Cartridge for At-Line Protein Monitoring in Mammalian Cell Culture Processes for Biop | Pinto, Inês F. | ACS Sensors | 10 |
 | ART-0449 | 2021 | New developments in membranes for bioprocessing – A review | Zydney, Andrew L. | Journal of Membrane Science | 18 |
@@ -457,10 +421,8 @@
 | ART-0451 | 2021 | Pembrolizumab Plus Ipilimumab or Placebo for Metastatic Non–Small-Cell Lung Cancer With PD-L1 Tumor Proportion | Boyer, Michael | Journal of Clinical Oncology | 23 |
 | ART-0452 | 2021 | Pembrolizumab Plus Ipilimumab or Placebo for Metastatic Non–Small-Cell Lung Cancer With PD-L1 Tumor Proportion | Boyer, Michael | Journal of Clinical Oncology | 23 |
 | ART-0453 | 2021 | Process development and optimization of continuous capture with three‐column periodic counter‐current chromato | Shi, Ce | Biotechnology and Bioengineering | 10 |
-| ART-0454 | 2021 | Process Performanceand Product Qualityin an Integrated Continuous Antibody Production Process ⚠ | - | 10.1002/bit.26069/abstract | 10 |
 | ART-0455 | 2021 | Real-Time Monitoring and Control of the Load ⚠ | - | 10.1002/bit.26078/abstract | 6 |
 | ART-0456 | 2021 | Rebecca A. Devine, Ph D, Independent Regulatory Consultant, Co-leader ⚠ | - | - | 53 |
-| ART-0457 | 2021 | Rebecca A. Devine, Ph D, Independent Regulatory Consultant, Co-leader ⚠ | - | - | 53 |
 | ART-0458 | 2021 | Recent advances in integrated process analytical techniques, modeling, and control strategies to enable contin | Chopda, Viki | Journal of Chemical Technology &amp; Bio | 19 |
 | ART-0459 | 2021 | Reinforcement learning based optimization of process chromatography for continuous processing of biopharmaceut | Nikita, Saxena | Chemical Engineering Science | 8 |
 | ART-0460 | 2021 | Towards Autonomous Operation by Advanced Process Control—Process Analytical Technology for Continuous Biologic | Helgers, Heribert | Processes | 31 |
@@ -490,26 +452,20 @@
 | ART-0484 | - | US20150166948A1 ⚠ | - | - | 27 |
 | ART-0485 | - | US20180148677A1 ⚠ | - | - | 24 |
 | ART-0486 | 1954 | Chemical Industry and Engineering Progress ⚠ | 吕学东 | 10.16085/j.issn.1000-6613.20 | 12 |
-| ART-0487 | 1956 | 文前五、六 中英文编委 ⚠ | - | - | 7 |
 | ART-0488 | 1966 | 用于生物分离的新型膜过程 ⚠ | 万印华 | - | 5 |
 | ART-0489 | 1972 | 《生物工程进展》1997,V ol. 17, No. 6 ⚠ | - | - | 14 |
-| ART-0490 | 1984 | 中华人民共和国海洋行业标准 ⚠ | - | - | 9 |
 | ART-0491 | 1984 | 均相共辐照法制备聚乙二醇甲基丙烯酸甲酯 改性聚偏氟乙烯 ⚠ | 樊凯 | 10.11889/j.1000-3436.2020.rr | 10 |
-| ART-0492 | 1986 | 中华人民共和国海洋行业标准 ⚠ | - | - | 7 |
 | ART-0493 | 1987 | HYT066-2002聚偏氟乙烯微孔滤膜折叠式过滤器 ⚠ | - | - | 9 |
-| ART-0494 | 1987 | 北京齐力佳提供 ⚠ | - | - | 29 |
 | ART-0495 | 1994 | 中国生物工程杂志 卿, ,一 ⚠ | - | - | 8 |
 | ART-0496 | 1995 | 《生物工程进展) ⚠ | - | - | 5 |
 | ART-0497 | 1996 | 收稿 1996年9月,收修改稿 1996年12月生物反应与产物分离组合技术的研究进展 ⚠ | - | - | 8 |
 | ART-0498 | 1998 | 《生物工程进展》1998,V ol. 18, No. 4 ⚠ | - | - | 4 |
 | ART-0499 | 1998 | 张琼琼 等哺乳动物细胞灌流培养工艺开发与优化 ⚠ | - | 10.13345/j.cjb.190431 | 10 |
-| ART-0500 | 1998 | 邱军付等: 大掺量粉煤灰泡沫混凝土保温板的试验研究 ⚠ | - | - | 1 |
 | ART-0501 | 1999 | 轻松实现按比例放大:摇摆式一次性生物反应器具有很好的按比例放大性能 ⚠ | - | - | 2 |
 | ART-0502 | 1999 | 轻松实现按比例放大:摇摆式一次性生物反应器具有很好的按比例放大性能 ⚠ | - | - | 2 |
 | ART-0503 | 2000 | 利用BIOSTAT STＲ一次性生物反应器 实现大规模灌注培养与高密度分批补料培养 ⚠ | - | - | 1 |
 | ART-0504 | 2000 | 前言:民生为本数据为镜透视中国消费新图景...................................................1 ⚠ | Chelsea | - | 51 |
 | ART-0505 | 2000 | 第31卷第2期浙江仡工 47 定章编号:1006-4148(2000)02-0047.02 ⚠ | - | 4148(2000)02-0047 | 2 |
-| ART-0506 | 2001 | Microsoft PowerPoint - 1-3无菌医疗器械的包装检测和验证 ⚠ | - | - | 57 |
 | ART-0507 | 2001 | 云南大学学报(自然科学版) 200123(6):457~460 CN53-1045/N ISSN0258-7971 ⚠ | - | - | 4 |
 | ART-0508 | 2001 | 分析化学(FENXI HUAXU E) 研究报告 ⚠ | Chinese Journal | - | 6 |
 | ART-0509 | 2004 | 以灌流方式培养CHO细胞系 一次性生物反应器从25升--500升的可扩展性:技术回顾 ⚠ | cherry | - | 6 |
@@ -521,22 +477,11 @@
 | ART-0515 | 2006 | 甲醛对人支气管上 皮细胞系染色体不 稳定性的研究 ⚠ | - | - | 6 |
 | ART-0516 | 2006 | 聚醚砜超滤膜的制备工艺条件研究 ⚠ | 王克诚 | 972(2006)03-0327 | 4 |
 | ART-0517 | 2007 | 一段柔性linker 能够提高融合蛋白刺激腺苷酸环化 ⚠ | - | - | 1 |
-| ART-0518 | 2007 | 稳定表达HIV-1病毒样颗粒的293细胞系的筛选及其稳定性 ⚠ | 孔维 | 5503( 2007) 03-187 | 3 |
-| ART-0519 | 2008 | 中国生物工程杂志 ChinaBiotechnology,2015,35(8):109115 ⚠ | - | - | 7 |
 | ART-0520 | 2009 | (天津工业大学 中空纤维膜材料与膜过程教育部重点实验室,天津 300160) ⚠ | - | - | 8 |
 | ART-0521 | 2009 | , 杜启云, 赵宸煜 ⚠ | 天津工业大学中空纤维膜材料与膜过程教育部重点实验 | 8924(2009)01 -0096 | 5 |
-| ART-0522 | 2009 | Membrane Filtration Product ! ⚠ | - | - | 68 |
-| ART-0523 | 2009 | Microsoft Word - 膜技术产品及工程应用市场分析报告 ⚠ | - | - | 81 |
-| ART-0524 | 2009 | PVDF-MMT-PVA 增强型中空纤维膜的制备及性能研究 ⚠ | 杜永涛 | 10.19398/j.att.202009002 | 14 |
 | ART-0525 | 2009 | WAVE 生物反应器在生物制品生产中的应用 ⚠ | 王辉 | - | 6 |
-| ART-0526 | 2009 | 中国组织工程研究与临床康复 第13 卷 第8 期 2009–02–19 出版 ⚠ | - | 8225(2009)08-01557 | 4 |
-| ART-0527 | 2009 | 凝固条件对PVDFPVA 共混中空纤维膜结构 及性能的影响 ⚠ | - | 9721( 2009) 10-0001 | 4 |
 | ART-0528 | 2009 | 凝固浴温度对纤维素中空纤维膜结构及 气体渗透分离性能影响研究 ⚠ | - | - | 7 |
-| ART-0529 | 2010 | ( 1 北京航空航天大学生物工程系 北京 100083 2 北京市中奥维科技发展有限公司 北京 100083) ⚠ | 北京市中奥维科技发展有限公司 北京 | - | 4 |
 | ART-0530 | 2010 | (1. 福建省农业科学院农业生物资源研究所, 福建 福州 350003 ; 21 厦门大学生命科学学院, 福建 厦门 361005) ⚠ | 刘波(1957 | 0384 (2010) 01 - 118 | 8 |
-| ART-0531 | 2010 | 2010年第1期( 总第11 1期) ⚠ | 作者简介 | - | 4 |
-| ART-0532 | 2010 | E:\2010CRTER\3k正文\545-548许东-4.0 ⚠ | guanwei | 8225(2010)03-00545 | 4 |
-| ART-0533 | 2010 | 中国科学院大连化学物理研究所 ⚠ | 合成膜和其相关过程是一种新颖分离技术 | - | 4 |
 | ART-0534 | 2010 | 切向流过滤(Tangential Flow Filtration ,简称TFF )是制药工艺中已经被广 ⚠ | - | - | 7 |
 | ART-0535 | 2010 | 生命科学仪器 2010 第8卷6月刊 ⚠ | - | - | 4 |
 | ART-0536 | 2011 | ISO10993-11 急性全身毒性反应测试 ⚠ | - | - | 16 |
@@ -548,47 +493,31 @@
 | ART-0542 | 2012 | 挥发性有机物混合物对人支气管上皮细胞系转化 及染色体稳定性的影响研究 ⚠ | 刘东山 | - | 5 |
 | ART-0543 | 2012 | 血液透析膜的应用及其改性研究进展 ⚠ | 于金刚 | 10.3981/j.issn.1000-7857.201 | 8 |
 | ART-0544 | 2012 | 贴壁及悬浮培养的Trex-293细胞生长及其 重组腺病毒制备产率的比较分析 ⚠ | - | 1815( 2012) 32-8637 | 5 |
-| ART-0545 | 2013 | Microsoft Word - 超滤工艺的优化 ⚠ | M174946 | - | 6 |
-| ART-0546 | 2013 | 上海市浦东新区长柳路58 号证大立方大厦1509 室 ⚠ | amanda | - | 8 |
 | ART-0547 | 2013 | 生物反应器在干细胞培养中的应用研究进展 ⚠ | 杨忠财 邱明宁 刘红亮 | - | 7 |
 | ART-0548 | 2014 | 中国肺癌杂志 2 0 1 4 年1 2月第 1 7卷第 1 2期 Chin J Lung Cancer, December 2014, Vol.17, No.12 ·870· ⚠ | 万海粟 | 10.3779/j.issn.1009-3419.201 | 7 |
-| ART-0549 | 2014 | 压差法在塑料薄膜气体阻隔性测试中的应用 ⚠ | 潘建平 | - | 4 |
-| ART-0550 | 2014 | 纺丝过程中拉伸比对七通道聚砜中空纤维膜 微结构及性能的影响 ⚠ | - | 10.16159/j.cnki.issn1007-892 | 6 |
-| ART-0551 | 2014 | 膜吸附和膜吸收研究进展 ⚠ | 林立刚 | - | 8 |
-| ART-0552 | 2014 | 超声波在生物发酵工程中的应用 ⚠ | 王武 | - | 5 |
 | ART-0553 | 2015 | (1.海南大学材料与化工学院,海南海口 570228;2.海南天然橡胶产业集团股份有限公司,海南海口 570105) ⚠ | - | - | 5 |
 | ART-0554 | 2015 | ?第二届膜法城镇新水源技术研讨会论文集2015年 ⚠ | - | - | 5 |
 | ART-0555 | 2015 | ISO10993-6 肌肉植入测试 ⚠ | - | - | 17 |
-| ART-0556 | 2015 | 一次性生物反应器(Disposable bioreactor 或 ⚠ | - | 2214(2015)03-0056 | 9 |
 | ART-0557 | 2015 | 一次性生物反应器(Disposable bioreactor 或 ⚠ | - | 2214(2015)03-0056 | 9 |
-| ART-0558 | 2015 | 一次性生物反应器(Disposable bioreactor 或 ⚠ | - | 2214(2015)03-0056 | 9 |
 | ART-0559 | 2015 | 上世纪70 年代以来,随着共挤复合成型技术及共 ⚠ | 挤出设备的发展 | 10.3969/j.issn.1008-553X.201 | 5 |
-| ART-0560 | 2015 | 中空纤维膜分离性能实验与预测 ⚠ | 刘卫华 | - | 7 |
 | ART-0561 | 2015 | 国外一次性使用技术与一次性生物反应器在生物技术领域的应用现状 ⚠ | - | - | 5 |
 | ART-0562 | 2015 | 容器封闭完整性: 法规、测试方法和应用 ⚠ | 测试方法的开发与验证 | - | 33 |
 | ART-0563 | 2015 | 物样品定置分析 方法验证 ⚠ | - | - | 6 |
-| ART-0564 | 2015 | 膜 科 学 与 技 术 ⚠ | Vol. | - | 13 |
 | ART-0565 | 2015 | 诲峡两岸膜法水处理院士髙峰论坛暨第六届全囯医药行业膜分离技术应用研讨会 ⚠ | - | - | 4 |
 | ART-0566 | 2016 | ·24· 化工与医药工程第37卷 第 3期 2016 年6月出版 ⚠ | - | - | 4 |
 | ART-0567 | 2016 | 【摘要】高阻隔膜材料因优异的阻隔性能在食品、药品、化学品等 ⚠ | - | 10.13751/j.cnki.kjyqy.2016.0 | 2 |
 | ART-0568 | 2016 | 中 国 生 物 医 学 工 程 学 报 ⚠ | Chinese | - | 7 |
 | ART-0569 | 2016 | 中国组织工程研究 第20卷 第47期 2016–11–18出版 ⚠ | - | 4344 (2016)47-07106 | 6 |
 | ART-0570 | 2016 | 绿色功能型软包装材料—多层共挤阻隔膜概述 ⚠ | 会议 | - | 3 |
-| ART-0571 | 2016 | 膜 科 学 与 技 术 ⚠ | Vol. | - | 10 |
 | ART-0572 | 2017 | CN103298538B流体过滤系统 ⚠ | - | - | 52 |
-| ART-0573 | 2017 | 中国新药杂志2017 年第26 卷第16 期 ⚠ | 作者简介 | - | 7 |
 | ART-0574 | 2017 | 中国生物制品学杂志 2017年7月第 30卷第 7期Chin ⚠ | - | 10.13200/j.cnki.cjb.001812 | 5 |
 | ART-0575 | 2017 | 包 装 工 程 第38卷 第17期 ⚠ | 陈强(1963—) | 3563(2017)17-0070 | 7 |
 | ART-0576 | 2018 | 中华实验和临床感染病杂志 (电子版 ) 2018年4月 第12卷 第2期 Chin J Exp Clin Infect Dis (Electronic Edition), April 2018, V ⚠ | - | 10.3877/cma.j.issn.1674-1358 | 6 |
 | ART-0577 | 2018 | 医疗装备 2018 年 8 月第 31 卷第 15 期 Medical Equipment, August. 2018,Vol. 31, No.15医用二氧化碳培养箱(以下简称培养箱)是通过在培 ⚠ | - | - | 4 |
 | ART-0578 | 2018 | 工 程 塑 料 应 用 ⚠ | 温变英 | 3539(2018)01-0128 | 6 |
-| ART-0579 | 2018 | 膜 科 学 与 技 术 ⚠ | Vol. | - | 7 |
 | ART-0580 | 2019 | GaoQ FIA-50操作手册--黄彦 ⚠ | - | - | 19 |
 | ART-0581 | 2019 | GaoQ FIA-50操作手册--黄彦 ⚠ | - | - | 19 |
-| ART-0582 | 2019 | PDA TR83 ⚠ | - | - | 36 |
 | ART-0583 | 2019 | 环 境 科 学 学 报 ⚠ | Acta | - | 9 |
-| ART-0584 | 2019 | 血液透析膜材料的研究进展   ⚠ | - | - | 3 |
-| ART-0585 | 2020 | (山东华宇工学院,山东 德州 253034) ⚠ | 随着国家对环保的日益重视 | 7988(2020)14-243 | 3 |
 | ART-0586 | 2020 | .硫化橡胶有机挥发物成分研究 ⚠ | - | - | 8 |
 | ART-0587 | 2020 | 《北京航空航天大学学报》网络首发论文 ⚠ | 刘国田 | 10.13700/j.bh.1001-5965.2020 | 10 |
 | ART-0588 | 2020 | 中空纤维膜在紫草素提取中的应用 ⚠ | 孙道宝 | 8945(2020)09-0023 | 5 |
@@ -597,15 +526,11 @@
 | ART-0591 | 2020 | 建设单位(盖章): 湖州高精检测科技有限公司 ⚠ | 环境影响评价机构 | - | 111 |
 | ART-0592 | 2020 | 水的或疏水的,此外多肽可折叠成非常确定的二级结构(a 螺旋、β折叠和各种转角)、三级 ⚠ | - | - | 4 |
 | ART-0593 | 2020 | 膜 科 学 与 技 术 ⚠ | Vol. | - | 8 |
-| ART-0594 | 2020 | 膜 科 学 与 技 术 ⚠ | Vol. | - | 7 |
-| ART-0595 | 2020 | 膜材料：基础打就 未来可期 ⚠ | - | - | 3 |
-| ART-0596 | 2020 | 血液透析膜研究进展 ⚠ | 牛小旦 | 3(12)8528-8533 | 3 |
 | ART-0597 | 2020 | 高选择性中空纤维膜的制造与应用 ⚠ | - | - | 7 |
 | ART-0598 | 2020 | 高阻隔材料在生化防护领域的应用及发展趋势 ⚠ | 顾玉培 | - | 6 |
 | ART-0599 | 2021 | 2021-2027 中国生物反应器的一次性 袋子市场现状及未来发展趋势 ⚠ | - | - | 94 |
 | ART-0600 | 2021 | JB_T 20200-2021 过滤器完整性测试仪 ⚠ | - | - | 14 |
 | ART-0601 | 2021 | Prog Pharm Sci Mar. 2021 Vol. 45 No. 3 2021 年 3 月 第 45 卷 第 3 期 ⚠ | - | 10.1158/1538-7445 | 13 |
-| ART-0602 | 2021 | 低温等离子体预处理针织管增强ＰＶＤＦ 中空纤维膜性能分析 ⚠ | 刘丽妍 | - | 7 |
 | ART-0603 | 2021 | 冷拉伸对聚丙烯中空纤维膜结构与性能的影响 ⚠ | 高进 | 10.15925/j.cnki.issn1005-336 | 5 |
 | ART-0604 | 2021 | 国外一次性使用技术与一次性生物反应器在生物技术领域的应用现状 ⚠ | - | - | 5 |
 | ART-0605 | 2021 | 大多数变速器在变扭器锁止的时候散热器流量都会有明显 ⚠ | - | 10.13825/j.cnki.motorchina.2 | 3 |
@@ -616,16 +541,13 @@
 | ART-0610 | 2021 | 激流一滋注式反应器大规模培养 细胞工艺研究 ⚠ | 宋羚羚李峦峰都芝香杨凡 | - | 6 |
 | ART-0611 | 2021 | 用富利叶变换红外光谱研究聚苯硫醚(PPS)热处理过程中发生的反应和变化 ⚠ | - | - | 5 |
 | ART-0612 | 2021 | 科学新闻 SCIENCE NEWS 68 科学新闻 SCIENCE NEWS 69 ⚠ | - | 10.1126/science.opms.p130008 | 4 |
-| ART-0613 | 2021 | 膜 科 学 与 技 术 ⚠ | Vol. | - | 7 |
 | ART-0614 | 2021 | 血液透析通过弥散、对流、超滤、吸附等机理清除体内的有 ⚠ | - | - | 4 |
 | ART-0615 | 2022 | a. PC变色有色差,硅胶,UV胶,血红蛋白上层分离,上部有PVC管路,1米长,剂量大可能会粘连 ⚠ | - | - | 1 |
 | ART-0616 | 2022 | Frontier Science and Technologies in Focus 2022 ⚠ | chenhv | - | 106 |
 | ART-0617 | 2022 | G22221547-A 多肽蛋白质电荷异质性分析 ⚠ | hqruan | - | 47 |
 | ART-0618 | 2022 | 一次性生物反应系统专用膜的研究进展 ⚠ | 李晓敏 | 10.3969/j.issn.1000-8144.202 | 6 |
 | ART-0619 | 2022 | 中国男科杂志 2022年第36卷第5期 ⚠ | - | 10.3969/j.issn.1008-0848.202 | 4 |
-| ART-0620 | 2022 | 五层共挤阻隔膜的制备与性能研究 ⚠ | 曹志峰(1981—) | - | 5 |
 | ART-0621 | 2022 | 扫描全能王 2022-10-11 13.32 ⚠ | - | - | 9 |
-| ART-0622 | 2022 | 滤膜透气效果测试报告 ⚠ | - | - | 16 |
 | ART-0623 | 2023 | 2023AI大模型应用中美比较研究 钛媒体 2023-9 ⚠ | - | - | 70 |
 | ART-0624 | 2023 | SUT新产品开发-立项文件SUT New product development - Project approval documents ⚠ | - | - | 16 |
 | ART-0625 | 2023 | 和代谢副产物不断从生物反应器中移除,同时通过cell bleeding ⚠ | - | - | 16 |

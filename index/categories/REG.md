@@ -1,6 +1,6 @@
 # REG · 法规指南
 
-目录 `05-法规指南`，共 93 条。标记 ⚠ 表示题名或分类置信度不足，需人工确认。
+目录 `05-法规指南`，共 78 条。标记 ⚠ 表示题名或分类置信度不足，需人工确认。
 
 | 编号 | 年份 | 题名 | 第一作者 | 刊名/编号 | 页数 |
 | --- | --- | --- | --- | --- | --- |
@@ -9,22 +9,14 @@
 | REG-0003 | 2006 | Title: Worst Case Instrument Kit Steam Sterilization Validation Plan ⚠ | - | - | 65 |
 | REG-0004 | 2008 | 一.我们先来看看2010GMP的原型——欧盟GMP Annex 1 Manufacture of Sterile medicinal Products ⚠ | - | - | 13 |
 | REG-0005 | 2008 | 化学相容性&溶析出验证分析方法 ⚠ | - | - | 20 |
-| REG-0006 | 2009 | Aeration brings water and air in close contact in order to remove dissolved gases (such as carbon ⚠ | - | - | 8 |
-| REG-0007 | 2009 | Corrosion causes gradual decay and deterioration of pipes, both internally and externally. It can ⚠ | - | - | 8 |
 | REG-0008 | 2009 | Rules Relating to Wells and Borings ⚠ | - | - | 6 |
-| REG-0009 | 2009 | study guide for people taking the water operator certification exam. The final product has turned ⚠ | - | - | 6 |
-| REG-0010 | 2009 | Water Resources ⚠ | - | - | 8 |
 | REG-0011 | 2010 | 一、2010 年中国GMP 发行版 ⚠ | - | - | 6 |
 | REG-0012 | 2010 | 医疗器械生产过程确认 ⚠ | - | - | 5 |
 | REG-0013 | 2010 | 验证总计划的编写 ⚠ | - | - | 35 |
-| REG-0014 | 2011 | QIN, SELENA ⚠ | - | - | 44 |
 | REG-0015 | 2011 | Title: Worst Case Instrument Kit Steam Sterilization Validation Final Report ⚠ | - | - | 40 |
 | REG-0016 | 2011 | 骨针包装运输试验中文 ⚠ | - | - | 6 |
 | REG-0017 | 2012 | HPV（过氧化氢蒸汽）--- ---气态的生物医药灭 HPV --- HPV --- HPV 菌解决方案 ⚠ | - | - | 44 |
 | REG-0018 | 2012 | 常见缺陷及工程解决方案 ⚠ | - | - | 41 |
-| REG-0019 | 2013 | HVAC系统GEP与GMP实施1 ⚠ | - | - | 70 |
-| REG-0020 | 2013 | HVAC系统GEP与GMP实施2 ⚠ | - | - | 56 |
-| REG-0021 | 2013 | HVAC系统GEP与GMP实施3 ⚠ | - | - | 66 |
 | REG-0022 | 2014 | B2法规版说明书20211129 REV A4 ⚠ | - | - | 41 |
 | REG-0023 | 2014 | B2法规版说明书20211129 REV A4_1 ⚠ | - | - | 41 |
 | REG-0024 | 2014 | B2法规版说明书20211129 REV A4_2 ⚠ | - | - | 41 |
@@ -62,14 +54,11 @@
 | REG-0056 | 2014 | Esco 二级生物安全柜(AB2-4S8-CN) 操作说明书 ⚠ | - | - | 41 |
 | REG-0057 | 2014 | Esco 二级生物安全柜(AB2-4S8-CN) 操作说明书 ⚠ | - | - | 41 |
 | REG-0058 | 2014 | Esco二级生物安全柜(AB2-4S8-CN)操作说明书 ⚠ | - | - | 41 |
-| REG-0059 | 2015 | Scan.tif ⚠ | - | - | 8 |
 | REG-0060 | 2016 | EO residuals ⚠ | - | - | 2 |
 | REG-0061 | 2017 | G21 G22 G23 G24 G25 G26 G27 G28 G29 G2A G2B G2C G2D ⚠ | - | - | 17 |
-| REG-0062 | 2018 | I-8.2-540 (QSD007277), Version AP ⚠ | - | - | 30 |
 | REG-0063 | 2018 | This document is the property of Medtronic, Spinal and Biologics. Information herein is confidential. ⚠ | - | - | 26 |
 | REG-0064 | 2019 | 081100-05(方案)-1900017A - 西格玛奥德里奇辐照灭菌确认方案 ⚠ | - | - | 18 |
 | REG-0065 | 2019 | 081100-06(报告)-1900017A - 西格玛奥德里奇辐照灭菌确认报告 ⚠ | - | - | 10 |
-| REG-0066 | 2019 | This document is the property of Medtronic, Spinal and Biologics. Information herein is confidential. ⚠ | - | - | 72 |
 | REG-0067 | 2020 | Annex 1 : Manufacture of Sterile Products ⚠ | - | - | 71 |
 | REG-0068 | 2020 | EU-GMP 附录1 无菌产品生产(2020版)_1 ⚠ | - | - | 71 |
 | REG-0069 | 2020 | EU-GMP 附录1 无菌产品生产(2020版)_2 ⚠ | - | - | 71 |
@@ -79,11 +68,7 @@
 | REG-0073 | 2021 | D:\E\CLM MAW 资料\灭菌贴纸\ACTIVATING+DECONTAMINATION+CYCLE_v3-Model ⚠ | - | - | 1 |
 | REG-0074 | 2021 | D:\E\CLM MAW 资料\灭菌贴纸\ACTIVATING+DECONTAMINATION+CYCLE_v3-Model | - | - | 1 |
 | REG-0075 | 2021 | 化学药品制剂人体生物利用度和生物等效性研究技术 ⚠ | - | - | 66 |
-| REG-0076 | 2022 | WRS 25 Single-Use Bioreactor System ⚠ | - | - | 4 |
-| REG-0077 | 2022 | WRS 25 Single-Use Bioreactor System ⚠ | - | - | 4 |
-| REG-0078 | 2022 | WRS 25 Single-Use Bioreactor System ⚠ | - | - | 4 |
 | REG-0079 | 2022 | 第 4 卷 欧盟人用和兽用药品生产质量管理规范指南 ⚠ | - | - | 59 |
-| REG-0080 | 2022 | 第 4 卷 欧盟人用和兽用药品生产质量管理规范指南 ⚠ | - | - | 59 |
 | REG-0081 | 2023 | 关于组织“节能服务进企业”暨2022年国家工业节能技术装备推广交流大会的预通知(5) ⚠ | - | - | 3 |
 | REG-0082 | 2023 | 关于组织召开“节能服务进企业”暨2022年国家工业节能技术装备推广交流会的通知 ⚠ | - | - | 8 |
 | REG-0083 | 2023 | 验证技术指导原则 ⚠ | - | - | 10 |
